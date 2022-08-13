@@ -12,11 +12,16 @@ public class CardTarget : MonoBehaviour , IDropHandler
     {
         Debug.Log("CardUsed");
         gameManager.nextTurn = true;
+        
         cardUsed = true;
         GameObject whichCard = eventData.pointerDrag.gameObject;
         
 
         cardEffect(whichCard);
+        if (whichCard.GetComponent<Card>().absorbSkill == true)
+        {
+            AbsorbCard(whichCard);
+        }
         
 
         if (eventData.pointerDrag != null) { 
@@ -43,6 +48,16 @@ public class CardTarget : MonoBehaviour , IDropHandler
     public void cardEffect(GameObject which)
     {
         GetComponent<EnemyScript>().valueChanges(which.GetComponent<Card>().attackPoint, which.GetComponent<Card>().hpGain);
+
+    }
+
+    public void AbsorbCard(GameObject which)
+    {
+        GameObject a = Instantiate(GetComponent<EnemyScript>().card , GameObject.Find("UICanvas").transform);
+        gameManager.playerCards.Add(a);
+
+        GetComponent<EnemyScript>().Absorbed();
+
 
     }
 }

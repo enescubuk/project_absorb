@@ -8,14 +8,17 @@ public class GameManager : MonoBehaviour
     public int turnNumber;
     public int memberNumber;
     public bool nextTurn;
+    public bool stuned;
 
     [Header("Cards")]
-    public GameObject[] cards;
+    public List<GameObject> cards;
     //public GameObject[] playerCards;
 
     [Header("Player Stats")]
     public int playerMana;
     public int playerHp;
+    public int playerMaxMana;
+    public int playerMaxHp;
     public int playerAttack;
 
     [Header("Enemies")]
@@ -28,14 +31,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        GameObject a = Instantiate(cards[Random.Range(0, cards.Length)], GameObject.Find("UICanvas").transform);
+        GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("UICanvas").transform);
         playerCards.Add(a);
-        GameObject b = Instantiate(cards[Random.Range(0, cards.Length)], GameObject.Find("UICanvas").transform);
+        GameObject b = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("UICanvas").transform);
         playerCards.Add(b);
-        GameObject c = Instantiate(cards[Random.Range(0, cards.Length)], GameObject.Find("UICanvas").transform);
+        GameObject c = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("UICanvas").transform);
         playerCards.Add(c);
 
-        turnNumber = enemies.Count;
+        memberNumber = enemies.Count;
     }
 
     
@@ -52,26 +55,30 @@ public class GameManager : MonoBehaviour
 
     void CardByTurn()
     {
-        GameObject a = Instantiate(cards[Random.Range(0, cards.Length)] , GameObject.Find("UICanvas").transform);
+        GameObject a = Instantiate(cards[Random.Range(0, cards.Count)] , GameObject.Find("UICanvas").transform);
         playerCards.Add(a);
 
     }
     void TurnSystem()
     {
+        if (turnNumber == memberNumber)
+        {
+            nextTurn = false;
+            if (stuned)
+            {
+                nextTurn = true;
+                stuned = false;
+            }
+            turnNumber = 0;
+            CardByTurn();
+            Debug.Log("MainChar Turn");
+
+        }
         if (nextTurn == true)
         {
-            if (turnNumber == memberNumber)
-            {
-                nextTurn = false;
-                turnNumber = 0;
-                CardByTurn();
-                Debug.Log("MainChar Turn");
-            }
-            else
-            {
-                enemies[turnNumber-1].GetComponent<EnemyScript>().turn = true;
-
-            }
+            enemies[turnNumber].GetComponent<EnemyScript>().turn = true;
+            nextTurn = false;
+            Debug.Log(turnNumber);
             turnNumber++;
 
         }

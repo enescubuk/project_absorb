@@ -120,3 +120,6 @@ MonoBehaviour:
   hpGain: 0
   attackPoint: 0
   manaGain: 0
+  stunCard: 0
+  stunTurn: 0
+  absorbSkill: 1

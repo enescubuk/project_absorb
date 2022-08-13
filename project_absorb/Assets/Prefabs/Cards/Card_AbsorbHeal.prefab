@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2598868237486306103, guid: 2c77b4f6d8e061448b96d9d1213c18e5, type: 3}
+  m_Sprite: {fileID: 502400357645485800, guid: 9afcb157430189e4aa5505bbe22be424, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -120,3 +120,6 @@ MonoBehaviour:
   hpGain: 2
   attackPoint: 2
   manaGain: 0
+  stunCard: 0
+  stunTurn: 0
+  absorbSkill: 0

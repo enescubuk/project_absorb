@@ -11,6 +11,10 @@ public class Card : MonoBehaviour
     public int hpGain;
     public int attackPoint;
     public int manaGain;
+    public bool stunCard;
+    public int stunTurn;
+    public bool absorbSkill;
+
 
 
 
@@ -30,6 +34,19 @@ public class Card : MonoBehaviour
         {
             cardUsed();
         }
+        /*if (stunCard == true)
+        {
+            gameManager.stuned = true;
+            stunTurn++;
+            stunCard = false;
+            if (stunTurn == 2)
+            {
+                stunCard = true;
+                stunTurn = 0;
+            }
+            
+        }*/
+        
         
     }
 
@@ -55,10 +72,14 @@ public class Card : MonoBehaviour
 
     }
 
-    public void attackPlayer(int attackPoint, int manaPoint, int decreaseAttack)
+    public void attackPlayer(int attackPoint,int manaPoint)
     {
         gameManager.playerHp -= attackPoint;
+
         gameManager.playerMana -= manaPoint;
-        gameManager.playerAttack -= decreaseAttack;
+        if (gameManager.playerMana - manaPoint < 0)
+        {
+            gameManager.playerMana = 0;
+        }
     }
 }

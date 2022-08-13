@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] GameObject card;
+    public GameObject card;
 
     [Header("Enemy Stats")]
     [SerializeField] int enemyType;
@@ -32,20 +32,30 @@ public class EnemyScript : MonoBehaviour
         {
             useCard();
             
+
         }
     }
 
     public void useCard()
     {
-        card.GetComponent<Card>().attackPlayer(attack,decreaseMana,decreaseAttack);
+        card.GetComponent<Card>().attackPlayer(attack,decreaseMana);
+        gameManager.nextTurn = true;
         turn = false;
+
+
 
     }
     public void valueChanges(int attackPower, int hpGain)
     {
 
         hp -= attackPower;
-        hp += hpGain;
+        gameManager.playerHp += hpGain;
+
+    }
+    public void Absorbed()
+    {
+
+        attack -= card.GetComponent<Card>().attackPoint;
 
     }
 }
