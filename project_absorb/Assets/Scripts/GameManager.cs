@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public int playerMana;
     public int playerHp;
 
+    [SerializeField] CardTarget playerTarget;
+
     public List<GameObject> playerCards;
 
 
@@ -28,12 +30,17 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         TurnSystem();
-        Debug.Log(turnNumber);
+        //Debug.Log(turnNumber);
+
+        /*if (playerTarget.cardUsed == true)
+        {
+            playerTarget.whichCard.GetComponent<Card>().cardUsed();
+        }*/
     }
 
     void CardByTurn()
     {
-        GameObject a = Instantiate(cards[Random.Range(0, cards.Length)] , GameObject.Find("CardPool").transform);
+        GameObject a = Instantiate(cards[Random.Range(0, cards.Length)] , GameObject.Find("UICanvas").transform);
         playerCards.Add(a);
 
     }

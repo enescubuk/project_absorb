@@ -6,14 +6,17 @@ public class Card : MonoBehaviour
 {
     
     [Header("Card Stats")]
-    [SerializeField] int cardType;
-    [SerializeField] int manaCost;
-    [SerializeField] int hpGain;
-    [SerializeField] int attackPoint;
+    public int cardType;
+    public int manaCost;
+    public int hpGain;
+    public int attackPoint;
+    public int manaGain;
+
 
 
     GameManager gameManager => GameObject.Find("GameManager").GetComponent<GameManager>();
 
+    
     void Start()
     {
         
@@ -30,7 +33,7 @@ public class Card : MonoBehaviour
         
     }
 
-    void cardUsed()
+    public void cardUsed()
     {
         
 
