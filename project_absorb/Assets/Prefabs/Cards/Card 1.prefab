@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7103612689926731402}
   - component: {fileID: 7103612689926731447}
   - component: {fileID: 7103612689926731444}
-  - component: {fileID: 7103612689926731445}
   - component: {fileID: 7103612689926731446}
   - component: {fileID: 7103612689926731441}
+  - component: {fileID: 2080339973940895802}
   m_Layer: 0
   m_Name: Card 1
   m_TagString: Untagged
@@ -78,22 +78,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7103612689926731445
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103612689926731403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e31e168e2d871f844a10a45f6eafeb93, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyType: 0
-  mana: 0
-  hp: 0
-  attack: 0
 --- !u!114 &7103612689926731446
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,3 +103,20 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &2080339973940895802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7103612689926731403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48f644ebcce4ba249a3e4a8b124d081c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardType: 0
+  manaCost: 0
+  hpGain: 0
+  attackPoint: 555
+  manaGain: 0

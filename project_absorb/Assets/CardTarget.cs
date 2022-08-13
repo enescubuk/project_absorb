@@ -5,23 +5,24 @@ using UnityEngine.EventSystems;
 public class CardTarget : MonoBehaviour , IDropHandler
 {
     public bool cardUsed;
-    public GameObject whichCard;
+     
 
     GameManager gameManager => GameObject.Find("GameManager").GetComponent<GameManager>();
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("CardUsed");
         cardUsed = true;
-        whichCard = eventData.pointerDrag.gameObject;
+        GameObject whichCard = eventData.pointerDrag.gameObject;
+        Debug.Log(631);
 
-        cardEffect();
+        cardEffect(whichCard);
+        Debug.Log(5555);
 
         if (eventData.pointerDrag != null) { 
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
         }
-
-        gameManager.playerCards.Remove(this.whichCard);
-        Destroy(whichCard);
+        gameManager.playerCards.Remove(eventData.pointerDrag.gameObject);
+        Destroy(eventData.pointerDrag.gameObject);
 
     }
 
@@ -37,9 +38,10 @@ public class CardTarget : MonoBehaviour , IDropHandler
         
     }
 
-    public void cardEffect()
+    public void cardEffect(GameObject which)
     {
-        GetComponent<EnemyScript>().valueChanges(whichCard.GetComponent<Card>().attackPoint, whichCard.GetComponent<Card>().hpGain);
+        GetComponent<EnemyScript>().valueChanges(which.GetComponent<Card>().attackPoint, which.GetComponent<Card>().hpGain);
         
+
     }
 }
