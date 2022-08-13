@@ -8,18 +8,24 @@ using PlayFab.ClientModels;
 
 public class PlayFabManager : MonoBehaviour
 {
-    public GameObject nameWindow;
-    public GameObject leaderboardWindow;
-    public GameObject nameError;
-    public InputField nameInput;
+    private GameObject nameWindow;
+    private GameObject leaderboardWindow;
+    private InputField nameInput;
     public GameObject rowPrefab;
-    public Transform rowsParent;
+    private Transform rowsParent;
     // Start is called before the first frame update
     void Start()
     {
         Login();
     }
 
+    void Awake()
+    {
+        nameWindow = GameObject.Find("nameWindow");
+        leaderboardWindow = GameObject.Find("leaderboardWindow");
+        nameInput = GameObject.Find("InputField").GetComponent<InputField>();
+        rowsParent = GameObject.Find("Table").GetComponent<Transform>();
+    }
     void Login()
     {
         var request = new LoginWithCustomIDRequest{CustomId = SystemInfo.deviceUniqueIdentifier, CreateAccount = true, InfoRequestParameters = new GetPlayerCombinedInfoRequestParams{GetPlayerProfile = true}};
