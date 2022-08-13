@@ -11,6 +11,7 @@ public class CardTarget : MonoBehaviour , IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("CardUsed");
+        gameManager.nextTurn = true;
         cardUsed = true;
         GameObject whichCard = eventData.pointerDrag.gameObject;
         

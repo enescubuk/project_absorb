@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     [Header("Turn Things")]
     public int turnNumber;
     public int memberNumber;
+    public bool nextTurn;
 
     [Header("Cards")]
     public GameObject[] cards;
@@ -27,7 +28,14 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        
+        GameObject a = Instantiate(cards[Random.Range(0, cards.Length)], GameObject.Find("UICanvas").transform);
+        playerCards.Add(a);
+        GameObject b = Instantiate(cards[Random.Range(0, cards.Length)], GameObject.Find("UICanvas").transform);
+        playerCards.Add(b);
+        GameObject c = Instantiate(cards[Random.Range(0, cards.Length)], GameObject.Find("UICanvas").transform);
+        playerCards.Add(c);
+
+        turnNumber = enemies.Count;
     }
 
     
@@ -50,21 +58,22 @@ public class GameManager : MonoBehaviour
     }
     void TurnSystem()
     {
-        if (Input.GetKeyDown(KeyCode.T))
+        if (nextTurn == true)
         {
             if (turnNumber == memberNumber)
             {
+                nextTurn = false;
                 turnNumber = 0;
                 CardByTurn();
                 Debug.Log("MainChar Turn");
             }
             else
             {
-                enemies[turnNumber].GetComponent<EnemyScript>().turn = false;
-                turnNumber++;
-                enemies[turnNumber].GetComponent<EnemyScript>().turn = true;
+                enemies[turnNumber-1].GetComponent<EnemyScript>().turn = true;
+
             }
-            
+            turnNumber++;
+
         }
     }
 }

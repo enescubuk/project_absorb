@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7103612689926731403
+--- !u!1 &8419566619944553948
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,26 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7103612689926731402}
-  - component: {fileID: 7103612689926731447}
-  - component: {fileID: 7103612689926731444}
-  - component: {fileID: 7103612689926731446}
-  - component: {fileID: 7103612689926731441}
-  - component: {fileID: 2080339973940895802}
+  - component: {fileID: 9010895130494512783}
+  - component: {fileID: 1728005729542280640}
+  - component: {fileID: 3109521612181829331}
+  - component: {fileID: 2642219754871821982}
+  - component: {fileID: 2411978633391387355}
+  - component: {fileID: 5553243855564663175}
   m_Layer: 0
-  m_Name: Card 1
+  m_Name: Card_Attack2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &7103612689926731402
+--- !u!224 &9010895130494512783
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103612689926731403}
+  m_GameObject: {fileID: 8419566619944553948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -40,21 +40,21 @@ RectTransform:
   m_AnchoredPosition: {x: -93, y: -577}
   m_SizeDelta: {x: 600, y: 800}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &7103612689926731447
+--- !u!222 &1728005729542280640
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103612689926731403}
+  m_GameObject: {fileID: 8419566619944553948}
   m_CullTransparentMesh: 1
---- !u!114 &7103612689926731444
+--- !u!114 &3109521612181829331
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103612689926731403}
+  m_GameObject: {fileID: 8419566619944553948}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -68,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 2598868237486306103, guid: 2c77b4f6d8e061448b96d9d1213c18e5, type: 3}
+  m_Sprite: {fileID: 6458568248523990305, guid: 36f88060b0006a042bb1f6738d2da08b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -78,45 +78,45 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7103612689926731446
+--- !u!114 &2642219754871821982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103612689926731403}
+  m_GameObject: {fileID: 8419566619944553948}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 698d9120f4989374f8061b8f9b91a8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
---- !u!225 &7103612689926731441
+--- !u!225 &2411978633391387355
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103612689926731403}
+  m_GameObject: {fileID: 8419566619944553948}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &2080339973940895802
+--- !u!114 &5553243855564663175
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7103612689926731403}
+  m_GameObject: {fileID: 8419566619944553948}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 48f644ebcce4ba249a3e4a8b124d081c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardType: 0
-  manaCost: 0
+  cardType: 3
+  manaCost: 2
   hpGain: 0
-  attackPoint: 555
+  attackPoint: 5
   manaGain: 0

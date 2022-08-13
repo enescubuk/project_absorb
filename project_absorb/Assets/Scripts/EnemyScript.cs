@@ -31,12 +31,15 @@ public class EnemyScript : MonoBehaviour
         if (turn == true)
         {
             useCard();
+            
         }
     }
 
     public void useCard()
     {
         card.GetComponent<Card>().attackPlayer(attack,decreaseMana,decreaseAttack);
+        turn = false;
+
     }
     public void valueChanges(int attackPower, int hpGain)
     {
