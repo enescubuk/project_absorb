@@ -10,11 +10,18 @@ public class spaceCounter : MonoBehaviour
     int counter = 0;
     int highScore;
     public PlayFabManager playFabManager_script;
+    bool isAlive;
     // Start is called before the first frame update
     void Start()
     {
         text.text = "" + counter;
         text2.text = "" + highScore;
+        isAlive = true;
+    }
+    void Awake()
+    {
+        playFabManager_script.nameWindow.SetActive(true);
+        playFabManager_script.leaderboardWindow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,6 +34,7 @@ public class spaceCounter : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            isAlive = false;
             if (counter > highScore)
             {
                 highScore = counter;

@@ -8,15 +8,17 @@ using PlayFab.ClientModels;
 
 public class PlayFabManager : MonoBehaviour
 {
-    private GameObject nameWindow;
-    private GameObject leaderboardWindow;
+    public  GameObject nameWindow;
+    public GameObject leaderboardWindow;
     private InputField nameInput;
     public GameObject rowPrefab;
     private Transform rowsParent;
+    string loggedInPlayfabId;
     // Start is called before the first frame update
     void Start()
     {
         Login();
+        
     }
 
     void Awake()
@@ -33,6 +35,7 @@ public class PlayFabManager : MonoBehaviour
     }
     void OnLoginSuccess(LoginResult result)
     {
+        loggedInPlayfabId = result.PlayFabId;
         Debug.Log("giriş başarılı/hesap kuruldu");
         string name  = null;
         if(result.InfoResultPayload.PlayerProfile != null)
@@ -50,11 +53,13 @@ public class PlayFabManager : MonoBehaviour
     }
     public void SubmitNameButton()
     {
+        
         var request = new UpdateUserTitleDisplayNameRequest
         {
             DisplayName = nameInput.text,
         };
         PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate,OnError);
+        
     }
 
     void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
@@ -107,9 +112,19 @@ public class PlayFabManager : MonoBehaviour
             Debug.Log(item.Position + " - " + item.DisplayName + " - " + item.StatValue);
             
             Text[] PlayerRow = GameObject.Find("PlayerRow").GetComponentsInChildren<Text>();
-            PlayerRow[0].text = (item.Position+1).ToString();
-            PlayerRow[1].text = item.DisplayName + "(Me)";
-            PlayerRow[2].text = item.StatValue.ToString();
+            //PlayerRow[0].text = (item.Position+1).ToString();
+            //PlayerRow[1].text = item.DisplayName + "(Me)";
+            //PlayerRow[2].text = item.StatValue.ToString();
+
+            if (item.PlayFabId == loggedInPlayfabId)
+            {
+                texts[0].color = Color.cyan;
+                texts[1].color = Color.cyan;
+                texts[2].color = Color.cyan;
+                PlayerRow[0].text = (item.Position+1).ToString();
+                PlayerRow[1].text = item.DisplayName + "(Me)";
+                PlayerRow[2].text = item.StatValue.ToString();
+            }
             
         }
 
