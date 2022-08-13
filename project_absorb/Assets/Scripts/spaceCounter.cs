@@ -21,7 +21,7 @@ public class spaceCounter : MonoBehaviour
     void Awake()
     {
         playFabManager_script.nameWindow.SetActive(true);
-        playFabManager_script.leaderboardWindow.SetActive(false);
+        //playFabManager_script.leaderboardWindow.SetActive(false);
     }
 
     // Update is called once per frame
@@ -32,16 +32,6 @@ public class spaceCounter : MonoBehaviour
             counter++;
             text.text = "" + counter;
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            isAlive = false;
-            if (counter > highScore)
-            {
-                highScore = counter;
-                text2.text = "" + highScore;
-                playFabManager_script.SendLeaderboard(highScore);
-            }
-            counter = 0;
-        }
     }
 }
+

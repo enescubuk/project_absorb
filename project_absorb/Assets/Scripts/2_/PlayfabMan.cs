@@ -1,105 +1,103 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using PlayFab;
 using PlayFab.ClientModels;
+using UnityEngine.UI;
 
-
-public class PlayFabManager : MonoBehaviour
+public class PlayfabMan : MonoBehaviour
 {
-    public  GameObject nameWindow;
-    public GameObject leaderboardWindow;
-    public GameObject menuwindow;
-    private InputField nameInput;
+    public GameObject nameWindow;
+    public GameObject leaderboardScreen;
+
     public GameObject rowPrefab;
-    private Transform rowsParent;
+    public Transform rowsParent;
+    public InputField nameInput;
     string loggedInPlayfabId;
     // Start is called before the first frame update
     void Start()
     {
         Login();
-        //leaderboardWindow.SetActive(false);
+        //leaderboardScreen = GameObject.Find("leaderboard");
+        //leaderboardScreen.SetActive(false);
+        //rowsParent = GameObject.Find("Table").GetComponent<Transform>();
     }
 
-    void Awake()
-    {
-        nameWindow = GameObject.Find("nameWindow");
-        leaderboardWindow = GameObject.Find("leaderboardWindow");
-        //nameInput = GameObject.Find("InputField").GetComponent<InputField>();
-        rowsParent = GameObject.Find("Table").GetComponent<Transform>();
-    }
+    
     void Login()
     {
-        var request = new LoginWithCustomIDRequest{CustomId = SystemInfo.deviceUniqueIdentifier, CreateAccount = true, InfoRequestParameters = new GetPlayerCombinedInfoRequestParams{GetPlayerProfile = true}};
-        PlayFabClientAPI.LoginWithCustomID(request,OnLoginSuccess,OnError);
+        var request = new LoginWithCustomIDRequest{
+            CustomId = SystemInfo.deviceUniqueIdentifier,
+            CreateAccount = true,
+            InfoRequestParameters = new GetPlayerCombinedInfoRequestParams{
+                GetPlayerProfile = true
+            }
+            
+        };
+        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess ,OnError);
     }
+
     void OnLoginSuccess(LoginResult result)
     {
-        loggedInPlayfabId = result.PlayFabId;
-        Debug.Log("giriş başarılı/hesap kuruldu");
-        string name  = null;
+        Debug.Log("başarılı giriş / hesap kuruldu");
+        string name = null;
         if(result.InfoResultPayload.PlayerProfile != null)
-        {
-            name = result.InfoResultPayload.PlayerProfile.DisplayName;
-        }
+        name = result.InfoResultPayload.PlayerProfile.DisplayName;
+
         if (name == null)
         {
-            Debug.Log("kayıt olmammış");
-            //leaderboardWindow.SetActive(false);
+            nameWindow.SetActive(true);
         }
         else
         {
-            Debug.Log("kayıt olmuş");
-            //leaderboardWindow.SetActive(true);
+            //leaderboardScreen.SetActive(true);
+            GetLeaderboard();
         }
     }
     public void SubmitNameButton()
     {
-        
-        var request = new UpdateUserTitleDisplayNameRequest
-        {
+        var request = new UpdateUserTitleDisplayNameRequest{
             DisplayName = nameInput.text,
-        };
-        PlayFabClientAPI.UpdateUserTitleDisplayName(request, OnDisplayNameUpdate,OnError);
-        
+            };
+            PlayFabClientAPI.UpdateUserTitleDisplayName(request,onDisplayNameUpdate,OnError);
     }
-
-    void OnDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
+    void onDisplayNameUpdate(UpdateUserTitleDisplayNameResult result)
     {
-        Debug.Log("isim güncellendi");
-        //leaderboardWindow.SetActive(true);
+        Debug.Log("display name güncellendi");
+        leaderboardScreen.SetActive(true);
     }
 
     void OnError(PlayFabError error)
     {
-        Debug.Log("giriş yaparken/hesap oluştururken hata");
+        Debug.Log("giriş yaparken/hesap kurarken hata!");
         Debug.Log(error.GenerateErrorReport());
     }
-
     public void SendLeaderboard(int score)
     {
-        var request = new UpdatePlayerStatisticsRequest
-        {Statistics = new List<StatisticUpdate>
-        {new StatisticUpdate{StatisticName = "KillScore",Value = score}}};
-
+        Debug.Log(score);
+        var request = new UpdatePlayerStatisticsRequest{
+            Statistics = new List<StatisticUpdate>{
+                new StatisticUpdate{StatisticName = "KillScore",
+                Value = score}
+            }
+        };
         PlayFabClientAPI.UpdatePlayerStatistics(request,OnLeaderboardUpdate, OnError);
     }
 
     void OnLeaderboardUpdate(UpdatePlayerStatisticsResult result)
     {
-        Debug.Log("başarıyla skor tablosuna gönderildi");
-        
+        Debug.Log("başarıyla leaderboarda gönderildi");
     }
 
-    public void GetLeaderboard()
-    {
-        leaderboardWindow.SetActive(true);
-        var request = new GetLeaderboardRequest{StatisticName = "KillScore",StartPosition = 0,MaxResultsCount = 10};
+    public void GetLeaderboard() {
+        leaderboardScreen.SetActive(true);
+        var request = new GetLeaderboardRequest{
+            StatisticName = "KillScore",
+            StartPosition = 0,
+            MaxResultsCount = 10};
         PlayFabClientAPI.GetLeaderboard(request,OnLeaderboardGet,OnError);
-    }
+        }
     
-
     void OnLeaderboardGet(GetLeaderboardResult result)
     {
         foreach (Transform item in rowsParent)
@@ -131,7 +129,6 @@ public class PlayFabManager : MonoBehaviour
             }
             
         }
-
-        
     }
 }
+
