@@ -15,8 +15,12 @@ public class GameManager : MonoBehaviour
     [Header("Player Stats")]
     public int playerMana;
     public int playerHp;
+    public int playerAttack;
 
-    [SerializeField] CardTarget playerTarget;
+    [Header("Enemies")]
+    public List<GameObject> enemies;
+
+
 
     public List<GameObject> playerCards;
 
@@ -53,7 +57,14 @@ public class GameManager : MonoBehaviour
                 turnNumber = 0;
                 CardByTurn();
                 Debug.Log("MainChar Turn");
-            }else turnNumber++;
+            }
+            else
+            {
+                enemies[turnNumber].GetComponent<EnemyScript>().turn = false;
+                turnNumber++;
+                enemies[turnNumber].GetComponent<EnemyScript>().turn = true;
+            }
+            
         }
     }
 }

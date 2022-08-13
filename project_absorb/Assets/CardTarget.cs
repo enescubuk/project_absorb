@@ -13,14 +13,15 @@ public class CardTarget : MonoBehaviour , IDropHandler
         Debug.Log("CardUsed");
         cardUsed = true;
         GameObject whichCard = eventData.pointerDrag.gameObject;
-        Debug.Log(631);
+        
 
         cardEffect(whichCard);
-        Debug.Log(5555);
+        
 
         if (eventData.pointerDrag != null) { 
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
         }
+
         gameManager.playerCards.Remove(eventData.pointerDrag.gameObject);
         Destroy(eventData.pointerDrag.gameObject);
 
@@ -41,7 +42,6 @@ public class CardTarget : MonoBehaviour , IDropHandler
     public void cardEffect(GameObject which)
     {
         GetComponent<EnemyScript>().valueChanges(which.GetComponent<Card>().attackPoint, which.GetComponent<Card>().hpGain);
-        
 
     }
 }

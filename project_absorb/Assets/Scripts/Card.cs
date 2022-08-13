@@ -54,4 +54,11 @@ public class Card : MonoBehaviour
 
 
     }
+
+    public void attackPlayer(int attackPoint, int manaPoint, int decreaseAttack)
+    {
+        gameManager.playerHp -= attackPoint;
+        gameManager.playerMana -= manaPoint;
+        gameManager.playerAttack -= decreaseAttack;
+    }
 }
