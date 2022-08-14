@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardType: 0
-  manaCost: 0
+  manaCost: 2
   hpGain: 0
   attackPoint: 0
   manaGain: 0

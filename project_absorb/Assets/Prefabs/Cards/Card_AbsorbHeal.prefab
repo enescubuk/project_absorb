@@ -117,8 +117,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardType: 0
   manaCost: 3
-  hpGain: 2
-  attackPoint: 2
+  hpGain: 4
+  attackPoint: 4
   manaGain: 0
   stunCard: 0
   stunTurn: 0

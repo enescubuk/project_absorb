@@ -72,14 +72,10 @@ public class Card : MonoBehaviour
 
     }
 
-    public void attackPlayer(int attackPoint,int manaPoint)
+    public void attackPlayer()
     {
         gameManager.playerHp -= attackPoint;
 
-        gameManager.playerMana -= manaPoint;
-        if (gameManager.playerMana - manaPoint < 0)
-        {
-            gameManager.playerMana = 0;
-        }
+        
     }
 }

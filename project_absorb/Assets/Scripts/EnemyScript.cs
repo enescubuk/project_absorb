@@ -38,7 +38,7 @@ public class EnemyScript : MonoBehaviour
 
     public void useCard()
     {
-        card.GetComponent<Card>().attackPlayer(attack,decreaseMana);
+        card.GetComponent<Card>().attackPlayer();
         gameManager.nextTurn = true;
         turn = false;
 

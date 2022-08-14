@@ -11,25 +11,30 @@ public class CardTarget : MonoBehaviour , IDropHandler
     public void OnDrop(PointerEventData eventData)
     {
         Debug.Log("CardUsed");
-        gameManager.nextTurn = true;
+        //gameManager.nextTurn = true;
         
         cardUsed = true;
         GameObject whichCard = eventData.pointerDrag.gameObject;
         
 
         cardEffect(whichCard);
-        if (whichCard.GetComponent<Card>().absorbSkill == true)
-        {
-            AbsorbCard(whichCard);
-        }
-        
 
-        if (eventData.pointerDrag != null) { 
+        if (eventData.pointerDrag != null)
+        {
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
         }
 
-        gameManager.playerCards.Remove(eventData.pointerDrag.gameObject);
-        Destroy(eventData.pointerDrag.gameObject);
+        if (cardUsed == true)
+        {
+            if (whichCard.GetComponent<Card>().absorbSkill == true)
+            {
+                AbsorbCard(whichCard);
+            }
+
+            gameManager.playerCards.Remove(eventData.pointerDrag.gameObject);
+            Destroy(eventData.pointerDrag.gameObject);
+        }
+        
 
     }
 
@@ -47,8 +52,16 @@ public class CardTarget : MonoBehaviour , IDropHandler
 
     public void cardEffect(GameObject which)
     {
-        GetComponent<EnemyScript>().valueChanges(which.GetComponent<Card>().attackPoint, which.GetComponent<Card>().hpGain);
 
+        if (gameManager.playerMana - which.GetComponent<Card>().manaCost >= 0)
+        {
+            GetComponent<EnemyScript>().valueChanges(which.GetComponent<Card>().attackPoint, which.GetComponent<Card>().hpGain);
+            gameManager.playerMana -= which.GetComponent<Card>().manaCost;
+        }
+        else
+        {
+            cardUsed = false;
+        }
     }
 
     public void AbsorbCard(GameObject which)

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class GameManager : MonoBehaviour
     public int playerMaxMana;
     public int playerMaxHp;
     public int playerAttack;
-
+    public Slider manaBar;
+    public Slider healthBar;
     [Header("Enemies")]
     public List<GameObject> enemies;
 
@@ -45,6 +47,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         TurnSystem();
+
+        healthBar.value = playerHp;
+        manaBar.value = playerMana;
+
         //Debug.Log(turnNumber);
 
         /*if (playerTarget.cardUsed == true)
@@ -63,6 +69,7 @@ public class GameManager : MonoBehaviour
     {
         if (turnNumber == memberNumber)
         {
+            playerMana = 4;
             nextTurn = false;
             if (stuned)
             {
@@ -82,5 +89,11 @@ public class GameManager : MonoBehaviour
             turnNumber++;
 
         }
+    }
+
+    public void NextTurn()
+    {
+
+        nextTurn = true;
     }
 }
