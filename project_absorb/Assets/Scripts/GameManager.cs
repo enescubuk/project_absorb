@@ -23,6 +23,10 @@ public class GameManager : MonoBehaviour
     public int playerAttack;
     public Slider manaBar;
     public Slider healthBar;
+    public Image mana => GameObject.Find("Mana").GetComponent<Image>();
+    public Sprite[] manaPots;
+
+
     [Header("Enemies")]
     public List<GameObject> enemies;
 
@@ -47,9 +51,32 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         TurnSystem();
+        if (playerHp>20)
+        {
+            playerHp = 20;
+        }
+
+        switch (playerMana)
+        {
+            case 0:
+                mana.sprite = manaPots[0];
+                break;
+            case 1:
+                mana.sprite = manaPots[1];
+                break;
+            case 2:
+                mana.sprite = manaPots[1];
+                break;
+            case 3:
+                mana.sprite = manaPots[1];
+                break;
+            case 4:
+                mana.sprite = manaPots[2];
+                break;
+        }
 
         healthBar.value = playerHp;
-        manaBar.value = playerMana;
+        //manaBar.value = playerMana;
 
         //Debug.Log(turnNumber);
 

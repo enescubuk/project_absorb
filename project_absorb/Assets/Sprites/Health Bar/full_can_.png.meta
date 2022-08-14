@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: befbb22bd5fa43741b3ff0d5cc1a3d5a
+guid: 52276d097d588084c898b463972ccbdf
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 723698620520164395
-    second: next button _0
+      213: -6820411014872162232
+    second: full_can__0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -35,7 +35,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -142,12 +142,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: next button _0
+      name: full_can__0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 111
-        width: 59
+        x: 2
+        y: 102
+        width: 197
         height: 28
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -156,8 +156,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2c6b80af081b0a00800000000000000
-      internalID: 723698620520164395
+      spriteID: 840226c61580951a0800000000000000
+      internalID: -6820411014872162232
       vertices: []
       indices: 
       edges: []

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
@@ -13,10 +14,11 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] int attack;
     [SerializeField] int decreaseAttack;
     [SerializeField] int decreaseMana;
+    [SerializeField] int firstHp;
 
 
 
-    
+
 
     public bool turn;
 
@@ -24,10 +26,15 @@ public class EnemyScript : MonoBehaviour
     void Start()
     {
         gameManager.enemies.Add(gameObject);
+        transform.GetChild(0).GetComponent<Slider>().maxValue = hp;
     }
 
     void Update()
     {
+        
+        transform.GetChild(0).GetComponent<Slider>().value = hp;
+        
+
         if (turn == true)
         {
             useCard();
