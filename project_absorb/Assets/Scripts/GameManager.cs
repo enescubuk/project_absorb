@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     void Update()
     {
+        PlayerPrefs.SetInt("KillCount", killCount);
         killText.text = "Kill Count: " + killCount;
         if (playerHp<=0)
         {
