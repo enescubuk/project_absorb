@@ -55,6 +55,7 @@ public class CardTarget : MonoBehaviour , IDropHandler
 
         if (gameManager.playerMana - which.GetComponent<Card>().manaCost >= 0)
         {
+            gameManager.playerAnim.SetTrigger("Attack");
             GetComponent<EnemyScript>().valueChanges(which.GetComponent<Card>().attackPoint, which.GetComponent<Card>().hpGain);
             gameManager.playerMana -= which.GetComponent<Card>().manaCost;
         }
@@ -67,6 +68,7 @@ public class CardTarget : MonoBehaviour , IDropHandler
     public void AbsorbCard(GameObject which)
     {
         GameObject a = Instantiate(GetComponent<EnemyScript>().card , GameObject.Find("UICanvas").transform);
+        a.transform.localPosition = new Vector3(600, -600, 0);
         gameManager.playerCards.Add(a);
 
         GetComponent<EnemyScript>().Absorbed();

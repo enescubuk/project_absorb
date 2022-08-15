@@ -72,9 +72,9 @@ public class Card : MonoBehaviour
 
     }
 
-    public void attackPlayer()
+    public void attackPlayer(int attack)
     {
-        gameManager.playerHp -= attackPoint;
+        gameManager.playerHp -= attack ;
 
         
     }

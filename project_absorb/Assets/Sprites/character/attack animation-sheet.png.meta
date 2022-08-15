@@ -1,7 +1,64 @@
 fileFormatVersion: 2
 guid: ed35fad032b946941839aa2826bfb26b
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -2276978665324261497
+    second: attack animation-sheet_0
+  - first:
+      213: 8471992299383900865
+    second: attack animation-sheet_1
+  - first:
+      213: 4944943340793532347
+    second: attack animation-sheet_2
+  - first:
+      213: 6395135011519223378
+    second: attack animation-sheet_3
+  - first:
+      213: 5859909369402883062
+    second: attack animation-sheet_4
+  - first:
+      213: 872080939882489676
+    second: attack animation-sheet_5
+  - first:
+      213: 1367428050427943287
+    second: attack animation-sheet_6
+  - first:
+      213: 4592316043335517583
+    second: attack animation-sheet_7
+  - first:
+      213: 2984919174496644090
+    second: attack animation-sheet_8
+  - first:
+      213: 8269529819304399464
+    second: attack animation-sheet_9
+  - first:
+      213: -3578105296451002889
+    second: attack animation-sheet_10
+  - first:
+      213: -8330708793210389928
+    second: attack animation-sheet_11
+  - first:
+      213: 7501204186980170211
+    second: attack animation-sheet_12
+  - first:
+      213: -7141478137131541466
+    second: attack animation-sheet_13
+  - first:
+      213: -2660299257402676213
+    second: attack animation-sheet_14
+  - first:
+      213: 848470705129612756
+    second: attack animation-sheet_15
+  - first:
+      213: 1955935302963218946
+    second: attack animation-sheet_16
+  - first:
+      213: 937870894872710027
+    second: attack animation-sheet_17
+  - first:
+      213: 5877741958180269438
+    second: attack animation-sheet_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -32,7 +89,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -41,7 +98,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -75,9 +132,321 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: attack animation-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 106
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78f4434c7fb8660e0800000000000000
+      internalID: -2276978665324261497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 106
+        width: 17
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ca4f981c10929570800000000000000
+      internalID: 8471992299383900865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 106
+        width: 21
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbf8e6ed4c7ff9440800000000000000
+      internalID: 4944943340793532347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 106
+        width: 20
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 256544cf86510c850800000000000000
+      internalID: 6395135011519223378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 106
+        width: 22
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbfd3b3684925150800000000000000
+      internalID: 5859909369402883062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 106
+        width: 32
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47a51d8ef04a1c00800000000000000
+      internalID: 872080939882489676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 106
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77999a121941af210800000000000000
+      internalID: 1367428050427943287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1457
+        y: 106
+        width: 36
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f85475b3c1f2bbf30800000000000000
+      internalID: 4592316043335517583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1657
+        y: 106
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afbef17ac209c6920800000000000000
+      internalID: 2984919174496644090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1859
+        y: 106
+        width: 40
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fd1814c034085ec0800000000000000
+      internalID: -3578105296451002889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2058
+        y: 106
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e930a80771a91860800000000000000
+      internalID: 7501204186980170211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: attack animation-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2258
+        y: 106
+        width: 45
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0c27469be7b41bd0800000000000000
+      internalID: -2660299257402676213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

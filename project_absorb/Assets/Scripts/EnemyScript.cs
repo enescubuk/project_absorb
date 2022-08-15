@@ -27,13 +27,15 @@ public class EnemyScript : MonoBehaviour
     {
         gameManager.enemies.Add(gameObject);
         transform.GetChild(0).GetComponent<Slider>().maxValue = hp;
+        
     }
 
     void Update()
     {
         
         transform.GetChild(0).GetComponent<Slider>().value = hp;
-        
+        transform.GetChild(1).GetComponent<Text>().text = "" + hp;
+
 
         if (turn == true)
         {
@@ -41,11 +43,21 @@ public class EnemyScript : MonoBehaviour
             
 
         }
+
+
+        if (hp <= 0)
+        {
+            gameManager.killCount++;
+            gameManager.enemies.Remove(this.gameObject);
+            Destroy(this.gameObject);
+        }
     }
 
     public void useCard()
     {
-        card.GetComponent<Card>().attackPlayer();
+        GetComponent<Animator>().SetTrigger("Attack");
+        gameManager.playerAnim.SetTrigger("Hit");
+        card.GetComponent<Card>().attackPlayer(attack);
         gameManager.nextTurn = true;
         turn = false;
 
@@ -57,12 +69,12 @@ public class EnemyScript : MonoBehaviour
 
         hp -= attackPower;
         gameManager.playerHp += hpGain;
+        GetComponent<Animator>().SetTrigger("TakeHit");
 
     }
     public void Absorbed()
     {
 
-        attack -= card.GetComponent<Card>().attackPoint;
 
     }
 }
