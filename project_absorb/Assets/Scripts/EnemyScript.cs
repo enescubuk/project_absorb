@@ -5,76 +5,80 @@ using UnityEngine.UI;
 
 public class EnemyScript : MonoBehaviour
 {
+    [Header("Enemy Cards")]
     public GameObject card;
 
     [Header("Enemy Stats")]
-    [SerializeField] int enemyType;
-    [SerializeField] int mana;
-    [SerializeField] int hp;
-    [SerializeField] int attack;
-    [SerializeField] int decreaseAttack;
-    [SerializeField] int decreaseMana;
-    [SerializeField] int firstHp;
+    public int hp;
 
+    public int cardType;
 
+    
 
+    public int id;
 
+    public int turnNumber;
 
-    public bool turn;
-
-    GameManager gameManager => GameObject.Find("GameManager").GetComponent<GameManager>();
+    GameManager gameManager => GameManager.current;
     void Start()
     {
         gameManager.enemies.Add(gameObject);
+
+        turnNumber = gameManager.enemies.IndexOf(gameObject);
+
         transform.GetChild(0).GetComponent<Slider>().maxValue = hp;
+
+
+        GameEvents.current.Dead += HpController;
+
+        GameEvents.current.Turn += ThisEnemyTurn;
+
         
     }
 
-    void Update()
+    public void ThisEnemyTurn(int id)
     {
-        
-        transform.GetChild(0).GetComponent<Slider>().value = hp;
-        transform.GetChild(1).GetComponent<Text>().text = "" + hp;
-
-
-        if (turn == true)
+        if (id == this.turnNumber)
         {
-            useCard();
-            
+            StartCoroutine(UseCard());
 
         }
-
-
-        if (hp <= 0)
+    }
+    public void HpController(int id)
+    {
+        if (id == this.id)
         {
+            GameEvents.current.Dead -= HpController;
+
+            GameEvents.current.Turn -= ThisEnemyTurn;
+
             gameManager.killCount++;
             gameManager.enemies.Remove(this.gameObject);
             Destroy(this.gameObject);
+            
         }
+        else
+        {
+            turnNumber = GameManager.current.enemies.IndexOf(gameObject);
+        }
+
     }
 
-    public void useCard()
+    private void FixedUpdate()
     {
+        transform.GetChild(0).GetComponent<Slider>().value = hp;
+        transform.GetChild(1).GetComponent<Text>().text = "" + hp;
+    }
+
+    IEnumerator UseCard()
+    {
+
         GetComponent<Animator>().SetTrigger("Attack");
         gameManager.playerAnim.SetTrigger("Hit");
-        card.GetComponent<Card>().attackPlayer(attack);
+        card.GetComponent<Card>().attackPlayer();
+        yield return new WaitForSeconds(1);
         gameManager.nextTurn = true;
-        turn = false;
-
-
-
-    }
-    public void valueChanges(int attackPower, int hpGain)
-    {
-
-        hp -= attackPower;
-        gameManager.playerHp += hpGain;
-        GetComponent<Animator>().SetTrigger("TakeHit");
-
-    }
-    public void Absorbed()
-    {
-
+        gameManager.turnNumber++;
 
     }
 }

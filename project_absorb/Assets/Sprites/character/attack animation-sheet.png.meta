@@ -60,7 +60,7 @@ TextureImporter:
       213: 5877741958180269438
     second: attack animation-sheet_18
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -81,6 +81,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -119,6 +120,7 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -182,6 +184,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -457,6 +471,19 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      attack animation-sheet_8: 2984919174496644090
+      attack animation-sheet_10: -3578105296451002889
+      attack animation-sheet_5: 872080939882489676
+      attack animation-sheet_1: 8471992299383900865
+      attack animation-sheet_2: 4944943340793532347
+      attack animation-sheet_14: -2660299257402676213
+      attack animation-sheet_7: 4592316043335517583
+      attack animation-sheet_12: 7501204186980170211
+      attack animation-sheet_0: -2276978665324261497
+      attack animation-sheet_6: 1367428050427943287
+      attack animation-sheet_4: 5859909369402883062
+      attack animation-sheet_3: 6395135011519223378
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

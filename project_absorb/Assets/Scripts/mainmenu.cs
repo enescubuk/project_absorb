@@ -2,13 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class mainmenu : MonoBehaviour
 {
+    public Text kill;
     // Start is called before the first frame update
     void Start()
     {
         
+    }
+    private void FixedUpdate()
+    {
+        kill.text = "Score: " + PlayerPrefs.GetInt("KillCount");
     }
     public void startButton()
     {
@@ -22,7 +28,7 @@ public class mainmenu : MonoBehaviour
 
     public void quitButton()
     {
-
+        Application.Quit();
     }
     public void retryButton()
     {

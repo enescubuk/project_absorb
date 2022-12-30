@@ -16,66 +16,43 @@ public class Card : MonoBehaviour
     public bool absorbSkill;
 
 
-
-
-    GameManager gameManager => GameObject.Find("GameManager").GetComponent<GameManager>();
-
+    public int slot;
     
-    void Start()
+    public void attackPlayer()
     {
-        
+        GameManager.current.playerHp -= attackPoint;
 
     }
 
-   
-    void Update()
+    public void CastSkill(GameObject enemy)
     {
-        if (Input.GetKeyDown(KeyCode.U))
+        enemy.GetComponent<Animator>().SetTrigger("TakeHit");
+
+        switch (cardType)
         {
-            cardUsed();
-        }
-        /*if (stunCard == true)
-        {
-            gameManager.stuned = true;
-            stunTurn++;
-            stunCard = false;
-            if (stunTurn == 2)
-            {
-                stunCard = true;
-                stunTurn = 0;
-            }
-            
-        }*/
-        
-        
-    }
+            case 0:// Attack Skill
 
-    public void cardUsed()
-    {
-        
+                enemy.GetComponent<EnemyScript>().hp -= attackPoint;
 
-        if (gameManager.turnNumber == 0)
-        {
-            gameManager.playerMana -= manaCost;
+                break;
 
+            case 1: // Absorb Skill
 
+                GameObject a = Instantiate(enemy.GetComponent<EnemyScript>().card, GameObject.Find("UICanvas").transform);
+                GameManager.current.DrawCard(a);
+                GameManager.current.playerCards.Add(a);
 
-        }
-        else
-        {
+                break;
+            case 2: // HP Steal Skill
 
+                enemy.GetComponent<EnemyScript>().hp -= attackPoint;
+                GameManager.current.playerHp += hpGain;
+
+                break;
         }
 
-        gameManager.playerCards.Remove(this.gameObject);
-        Destroy(gameObject);
+        GameManager.current.playerMana -= manaCost;
 
-
-    }
-
-    public void attackPlayer(int attack)
-    {
-        gameManager.playerHp -= attack ;
-
-        
+        GameEvents.current.DeadEnter(enemy.GetComponent<EnemyScript>().id, enemy.GetComponent<EnemyScript>().hp);
     }
 }

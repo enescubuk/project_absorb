@@ -3,22 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 //using System;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager current;
+
+    public bool isWalk;
+    bool isEmptySlot;
     public int killCount;
     [SerializeField] Text killText;
     public List<int> combs;
 
     [Header("Turn Things")]
     public int turnNumber;
-    public int memberNumber;
     public bool nextTurn;
     public bool stuned;
 
     [Header("Cards")]
     public List<GameObject> cards;
+    public Transform[] cardSlots;
+    public bool[] availableCardSlots;
     //public GameObject[] playerCards;
 
     [Header("Player Stats")]
@@ -38,64 +44,103 @@ public class GameManager : MonoBehaviour
     [Header("Enemies")]
     public List<GameObject> enemies;
     public List<GameObject> enemiesType;
+    public int spawnDelay;
 
 
 
     public List<GameObject> playerCards;
 
     public Animator playerAnim;
+
+    public GameObject NextButton;
     
+    public void EmptySlot(GameObject card)
+    {
+        availableCardSlots[card.GetComponent<Card>().slot] = true;
+    }
+
+
+    private void Awake()
+    {
+        //For Singelton
+        if (current != null && current != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            current = this;
+        }
+    }
     void Start()
     {
         
-       
 
-        GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("UICanvas").transform);
-        a.transform.localPosition = new Vector3(-850 , -600, 0);
+        //Get 3 Card From Start
+        GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
+        DrawCard(a);
+        
         playerCards.Add(a);
-        GameObject b = Instantiate(cards[Random.Range(0, cards.Count)],  GameObject.Find("UICanvas").transform);
-        b.transform.localPosition = new Vector3(-400 , -600, 0);
+        
+        GameObject b = Instantiate(cards[Random.Range(0, cards.Count)],  GameObject.Find("Card").transform);
+        DrawCard(b);
+        
         playerCards.Add(b);
-        GameObject c = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("UICanvas").transform);
-        c.transform.localPosition = new Vector3(50 , -600, 0);
+        
+        GameObject c = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
+        DrawCard(c);
         playerCards.Add(c);
         
     }
 
-    void Update()
+    private void FixedUpdate()
     {
-        PlayerPrefs.SetInt("KillCount", killCount);
-        killText.text = "Kill Count: " + killCount;
-        if (playerHp<=0)
+        Debug.Log(31);
+        HealthAndManaSystem();
+
+        if (availableCardSlots[0] == false && availableCardSlots[1] == false && availableCardSlots[2] == false && availableCardSlots[3] == false && availableCardSlots[4] == false)
         {
-            SceneManager.LoadScene("finish");
+            isEmptySlot = true;
         }
-        if (enemies.Count<= 0)
+        else
         {
-            GameObject a = Instantiate(enemiesType[Random.Range(0, enemiesType.Count)], GameObject.Find("UICanvas").transform);
-            a.transform.localPosition = new Vector3(1150, 50, 0);
-            GameObject b = Instantiate(enemiesType[Random.Range(0, enemiesType.Count)], GameObject.Find("UICanvas").transform);
-            b.transform.localPosition = new Vector3(450, 50, 0);
-        }
-        
-        memberNumber = enemies.Count;
-        TurnSystem();
-        if (playerHp>20)
-        {
-            playerHp = 20;
+            isEmptySlot = false;
         }
 
+        if (enemies.Count != 0)
+        {
+            TurnSystem();
+        }
+
+    }
+
+    void HealthAndManaSystem()
+    {
+        //Max Hp
+        if (playerHp > playerMaxHp)
+        {
+            playerHp = playerMaxHp;
+        }
+
+        //Hp Text Wrtier
+        healthBar.value = playerHp;
+        hpText.text = "" + playerHp;
+
+        //Mana Bar
+        GameObject.Find("ManaText").GetComponent<Text>().text = "" + playerMana;
         switch (playerMana)
         {
             case 0:
                 mana.sprite = manaPots[0];
-                
+
                 break;
             case 1:
                 mana.sprite = manaPots[1];
+
                 break;
             case 2:
                 mana.sprite = manaPots[1];
+                
                 break;
             case 3:
                 mana.sprite = manaPots[1];
@@ -104,45 +149,68 @@ public class GameManager : MonoBehaviour
                 mana.sprite = manaPots[2];
                 break;
         }
-        GameObject.Find("ManaText").GetComponent<Text>().text = "" + playerMana;
 
-        healthBar.value = playerHp;
-        hpText.text = "" + playerHp;
-        //manaBar.value = playerMana;
+        //Kill Count
+        PlayerPrefs.SetInt("KillCount", killCount);
+        killText.text = "Kill Count: " + killCount;
 
-        //Debug.Log(turnNumber);
-
-        /*if (playerTarget.cardUsed == true)
+        //Die
+        if (playerHp <= 0)
         {
-            playerTarget.whichCard.GetComponent<Card>().cardUsed();
-        }*/
+        SceneManager.LoadScene("finish");
+        }
+
     }
-    
     void CardByTurn()
     {
-        GameObject a = Instantiate(cards[Random.Range(0, cards.Count)] , GameObject.Find("UICanvas").transform);
+        GameObject a = Instantiate(cards[Random.Range(0, cards.Count)] , GameObject.Find("Card").transform);
+        
+        DrawCard(a);
         playerCards.Add(a);
 
+    }
+
+    public void DrawCard(GameObject card)
+    {
+        for (int i = 0; i < availableCardSlots.Length; i++)
+        {
+            if (availableCardSlots[i] == true)
+            {
+                card.GetComponent<Card>().slot = i;
+                card.transform.DOMove(cardSlots[i].position, 0.5f).From(new Vector3(cardSlots[2].position.x, cardSlots[2].position.y - 50, cardSlots[2].position.z)).SetEase(Ease.OutQuart);
+                //card.transform.position = cardSlots[i].position;
+                card.transform.rotation = cardSlots[i].rotation;
+                card.GetComponent<DragDrop>().firstPleace = cardSlots[i].position;
+
+                availableCardSlots[i] = false;
+
+                return;
+            }
+        }
     }
     void TurnSystem()
     {
 
-        if (turnNumber == memberNumber)
+        if (turnNumber == enemies.Count)
         {
+            NextButton.SetActive(true);
             playerMana = 4;
             nextTurn = false;
             turnNumber = 0;
-            CardByTurn();
-            Debug.Log("MainChar Turn");
+            if (isEmptySlot == false)
+            {
+                CardByTurn();
+            }
+            Debug.Log("Main Char Turn");
 
         }
         if (nextTurn == true)
         {
-            enemies[turnNumber].GetComponent<EnemyScript>().turn = true;
-            nextTurn = false;
-            Debug.Log(turnNumber);
-            turnNumber++;
+            NextButton.SetActive(false);
 
+            GameEvents.current.TurnEnter(enemies[turnNumber].GetComponent<EnemyScript>().turnNumber, turnNumber);
+            
+            nextTurn = false;
         }
     }
 
@@ -151,4 +219,5 @@ public class GameManager : MonoBehaviour
 
         nextTurn = true;
     }
+    
 }

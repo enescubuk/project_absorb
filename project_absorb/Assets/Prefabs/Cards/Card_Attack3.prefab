@@ -196,14 +196,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f644ebcce4ba249a3e4a8b124d081c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardType: 4
+  cardType: 0
   manaCost: 3
   hpGain: 0
-  attackPoint: 7
+  attackPoint: 5
   manaGain: 0
   stunCard: 0
   stunTurn: 0
   absorbSkill: 0
+  slot: 0
 --- !u!1 &6016723516931824630
 GameObject:
   m_ObjectHideFlags: 0

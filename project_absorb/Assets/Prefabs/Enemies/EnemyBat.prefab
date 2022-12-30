@@ -106,14 +106,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 9066665295950666772, guid: 61cce3f3732c05945b7425690430a6eb, type: 3}
-  enemyType: 1
-  mana: 5
   hp: 8
-  attack: 3
-  decreaseAttack: 0
-  decreaseMana: 0
-  firstHp: 0
-  turn: 0
+  cardType: 2
+  id: 2
+  turnNumber: 0
 --- !u!95 &1384387097
 Animator:
   serializedVersion: 3
