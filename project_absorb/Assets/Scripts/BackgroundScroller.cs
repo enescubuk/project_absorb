@@ -16,7 +16,7 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.current.enemies.Count <= 0)
+        if (GameManager.current.enemies.Count <= 0 && GameManager.current.newCardRoom==false)
         {
             offset += (Time.deltaTime * scrollSpeed) / 10f;
 

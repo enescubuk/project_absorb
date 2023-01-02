@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3752782795023132318}
   m_RootOrder: 1
@@ -110,6 +111,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3741250061428769437}
   - {fileID: 1031751232529278207}
@@ -171,7 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698d9120f4989374f8061b8f9b91a8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
   canvas: {fileID: 0}
+  firstPleace: {x: 0, y: 0, z: 0}
+  isEnd: 0
+  onTarget: 0
 --- !u!225 &7472496937249587231
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -204,6 +210,7 @@ MonoBehaviour:
   stunCard: 1
   stunTurn: 0
   absorbSkill: 0
+  slot: 0
 --- !u!1 &4786478913482046260
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +239,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3752782795023132318}
   m_RootOrder: 0

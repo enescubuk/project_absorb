@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
 
+    public bool newCardRoom;
+    public int wave;
     public bool isWalk;
     bool isEmptySlot;
     public int killCount;

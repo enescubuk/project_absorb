@@ -6,14 +6,20 @@ using DG.Tweening;
 
 public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler , IEndDragHandler , IDragHandler , IDropHandler , IPointerUpHandler, IPointerEnterHandler, IPointerExitHandler
 {
-    RectTransform rectTransform;
+    public RectTransform rectTransform;
 
-    [SerializeField] private Canvas canvas;
+    [SerializeField] public Canvas canvas;
     CanvasGroup canvasGroup;
 
     public Vector3 firstPleace;
 
     bool isDrag;
+
+    public bool isEnd;
+    
+    
+
+    public bool onTarget;
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -23,7 +29,6 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
     void Start()
     {
 
-    
     }
 
     public void OnPointerDown(PointerEventData eventData)
@@ -48,19 +53,31 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
     {
         if (eventData.pointerDrag != null)
         {
-            
-            transform.DOMove(firstPleace, 0.2f);
-            transform.DOScale(new Vector2(1f, 1f), 0.2f).SetEase(Ease.InCubic);
-        }
-        canvasGroup.alpha = 1f;
+            if (isEnd == false)
+            {
+                transform.DOMove(firstPleace, 0.2f);
+                transform.DOScale(new Vector2(1f, 1f), 0.2f).SetEase(Ease.InCubic);
+
+                canvasGroup.alpha = 1f;
+
+                canvasGroup.blocksRaycasts = true;
+            }
         
-        canvasGroup.blocksRaycasts = true;
+        }
+        
     }
 
     public void OnDrag(PointerEventData eventData)
     {
-
-        rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        if (onTarget == false)
+        {
+            Vector2 pos;
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out pos);
+            transform.position = canvas.transform.TransformPoint(pos);
+            //rectTransform.anchoredPosition = Camera.main.ScreenToWorldPoint(eventData.position) / canvas.scaleFactor;
+            //rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
+        }
+        
         
 
     }

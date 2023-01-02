@@ -44,10 +44,12 @@ public class GameEvents : MonoBehaviour
     public event Action<int> EnemySpawn;
     public void ClearEnter(int enemyCount)
     {
-        if (enemyCount <= 0)
+        if (GameManager.current.newCardRoom == false && enemyCount <= 0 )
         {
             
-            EnemySpawn(enemyCount);
+            EnemySpawn(enemyCount);,
+            GameManager.current.wave++;
+            
             
         }
     }

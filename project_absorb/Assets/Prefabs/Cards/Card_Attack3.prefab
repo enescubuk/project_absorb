@@ -28,6 +28,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6465895952199350126}
   m_RootOrder: 1
@@ -93,6 +94,7 @@ GameObject:
   - component: {fileID: 1766697590981238159}
   - component: {fileID: 6182799593428093378}
   - component: {fileID: 6277554950272229502}
+  - component: {fileID: 4542637114549958778}
   m_Layer: 0
   m_Name: Card_Attack3
   m_TagString: Untagged
@@ -110,6 +112,7 @@ RectTransform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1258269403630339484}
   - {fileID: 5872177393528492263}
@@ -171,7 +174,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 698d9120f4989374f8061b8f9b91a8db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rectTransform: {fileID: 0}
   canvas: {fileID: 0}
+  firstPleace: {x: 0, y: 0, z: 0}
+  isEnd: 0
+  onTarget: 0
 --- !u!225 &6182799593428093378
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -205,6 +212,18 @@ MonoBehaviour:
   stunTurn: 0
   absorbSkill: 0
   slot: 0
+--- !u!114 &4542637114549958778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5893077729098449694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13dc83706d7d12349b35eba901a01f89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6016723516931824630
 GameObject:
   m_ObjectHideFlags: 0
@@ -233,6 +252,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6465895952199350126}
   m_RootOrder: 0
