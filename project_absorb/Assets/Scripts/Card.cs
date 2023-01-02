@@ -6,8 +6,8 @@ public class Card : MonoBehaviour
 {
     
     [Header("Card Stats")]
-    public int cardType;
-    public int manaCost;
+    public int cardType;//hepsinde var
+    public int manaCost;//hepsinde var
     public int hpGain;
     public int attackPoint;
     public int manaGain;
