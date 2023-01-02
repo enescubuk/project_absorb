@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a91e9a17ee71a844c91b6a94b82742c2, type: 3}
+  m_Name: GeneralRoom
+  m_EditorClassIdentifier: 
+  roomName: General Room
+  roomDescription: "Buras\u0131 generalin odas\u0131.. \xC7abuk \xF6n\xFCn\xFC ilikle!!!"
+  roomPrefab: {fileID: 0}
