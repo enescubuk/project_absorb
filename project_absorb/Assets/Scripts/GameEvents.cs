@@ -47,7 +47,7 @@ public class GameEvents : MonoBehaviour
         if (GameManager.current.newCardRoom == false && enemyCount <= 0 )
         {
             
-            EnemySpawn(enemyCount);,
+            EnemySpawn(enemyCount);
             GameManager.current.wave++;
             
             
