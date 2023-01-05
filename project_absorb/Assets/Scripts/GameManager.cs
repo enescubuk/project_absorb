@@ -110,7 +110,6 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Debug.Log(31);
         HealthAndManaSystem();
 
         if (availableCardSlots[0] == false && availableCardSlots[1] == false && availableCardSlots[2] == false && availableCardSlots[3] == false && availableCardSlots[4] == false)
@@ -125,6 +124,10 @@ public class GameManager : MonoBehaviour
         if (enemies.Count != 0)
         {
             TurnSystem();
+        }
+        else
+        {
+                NextButton.SetActive(false);
         }
 
     }
@@ -179,6 +182,7 @@ public class GameManager : MonoBehaviour
     void CardByTurn()
     {
         GameObject a = Instantiate(cards[Random.Range(0, cards.Count)] , GameObject.Find("Card").transform);
+        a.transform.localScale = new Vector3(1,1,1);
         
         DrawCard(a);
         playerCards.Add(a);
@@ -206,7 +210,7 @@ public class GameManager : MonoBehaviour
     void TurnSystem()
     {
 
-        if (turnNumber == enemies.Count)
+        if (enemies.Count >= 0 && turnNumber == enemies.Count)
         {
             NextButton.SetActive(true);
             playerMana = 4;
