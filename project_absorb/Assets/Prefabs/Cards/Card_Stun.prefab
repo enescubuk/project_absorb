@@ -205,7 +205,7 @@ MonoBehaviour:
   cardType: 0
   manaCost: 0
   hpGain: 0
-  attackPoint: 0
+  attackPoint: 100
   manaGain: 0
   stunCard: 1
   stunTurn: 0

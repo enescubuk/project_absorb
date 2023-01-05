@@ -48,7 +48,7 @@ public class EnemySpawn : MonoBehaviour
 
     IEnumerator SpawnDelay()
     {
-
+        
         yield return new WaitForSeconds(GameManager.current.spawnDelay);
         GameEvents.current.ClearEnter(GameManager.current.enemies.Count);
 
@@ -76,7 +76,7 @@ public class EnemySpawn : MonoBehaviour
             else
             {
                 // ENEMY SELECTED   
-                Debug.Log(selected);
+                
 
                 if (currentEnemies.Count < roomNumber)
                 {

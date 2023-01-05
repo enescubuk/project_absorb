@@ -7,14 +7,22 @@ public class RoomScript : MonoBehaviour
     public int totalWave;
     public int waveCount;
     
+    public static RoomScript current;
     public int wavePeriod;
-    void Start()
+    private void Awake()
     {
-    
+        //For Singelton
+        if (current != null && current != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            current = this;
+        }
     }
-
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (GameManager.current.wave == waveCount)
         {
@@ -31,6 +39,14 @@ public class RoomScript : MonoBehaviour
             waveCount += wavePeriod;
             GameEvents.current.ClearEnter(0);
         }
+    }
+
+
+    public void NewWave()
+    {
+        waveCount += wavePeriod;
+        GameEvents.current.ClearEnter(0);
+
     }
     
 }

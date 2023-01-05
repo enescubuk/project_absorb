@@ -8,8 +8,9 @@ public class NewCardGeneretor : MonoBehaviour
     public List<GameObject> cardList;
     public Transform[] spawnPoints;
     
+    public GameObject parent;
     public static NewCardGeneretor current;
-    int a;
+    public int a;
     private void Awake()
     {
         //For Singelton
@@ -24,19 +25,24 @@ public class NewCardGeneretor : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (GameManager.current.newCardRoom && a < 2)
+        if (GameManager.current.newCardRoom && a < 2 && GameManager.current.enemies.Count == 0)
         {
+            
             newCardPanel.SetActive(true);
 
             for (int i = 0; i < spawnPoints.Length; i++)
             {
-                Instantiate(cardList[Random.Range(0,cardList.Count)],spawnPoints[i].position,Quaternion.identity,spawnPoints[i]);
+                GameObject b;
+                b = Instantiate(cardList[Random.Range(0,cardList.Count)],spawnPoints[i].position,Quaternion.identity,spawnPoints[i]);
+                Destroy(b.GetComponent<DragDrop>());
                 a++;
             }
             
         }
+
+
         
     }
 }

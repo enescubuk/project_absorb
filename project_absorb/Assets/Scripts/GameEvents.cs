@@ -22,6 +22,7 @@ public class GameEvents : MonoBehaviour
             
             Dead(id);
             //Spawn Enemy
+            
             StartCoroutine(SpawnDelay());
             
 
@@ -33,7 +34,7 @@ public class GameEvents : MonoBehaviour
 
     public void TurnEnter(int id,int currentTurn)
     {
-        Debug.Log(currentTurn);
+        //Debug.Log(currentTurn);
 
         if (currentTurn == id)
         {
@@ -46,17 +47,17 @@ public class GameEvents : MonoBehaviour
     {
         if (GameManager.current.newCardRoom == false && enemyCount <= 0 )
         {
-            
-            EnemySpawn(enemyCount);
-            GameManager.current.wave++;
-            
+                
+                EnemySpawn(enemyCount);
+                GameManager.current.wave++;
+                GameManager.current.NextButton.SetActive(true);
             
         }
     }
 
     IEnumerator SpawnDelay()
     {
-        
+       // GameManager.current.NextButton.SetActive(false);
         yield return new WaitForSeconds(GameManager.current.spawnDelay);
         ClearEnter(GameManager.current.enemies.Count);
 
