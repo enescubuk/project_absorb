@@ -1782,6 +1782,42 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 8805840878140177295, guid: aa09f202f4789884d9c8ef38c3e1fcd8, type: 3}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 1359098270152948456, guid: a0b01d840068e9f43a89b5290f2732a9, type: 3}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[2]
+      value: 
+      objectReference: {fileID: 9066665295950666772, guid: 61cce3f3732c05945b7425690430a6eb, type: 3}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[3]
+      value: 
+      objectReference: {fileID: 8419566619944553948, guid: 214ea2a71f70bd74e8e5726358e6d13f, type: 3}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[4]
+      value: 
+      objectReference: {fileID: 5893077729098449694, guid: 212260ded14633a45977de74ce7ff71d, type: 3}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[5]
+      value: 
+      objectReference: {fileID: 8564663502008333693, guid: 8fc4a0d90d184bd4cb2a2b0d55a2f974, type: 3}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[6]
+      value: 
+      objectReference: {fileID: 925112164681752354, guid: aa2603de7f13e6c4f843254988bd4d97, type: 3}
+    - target: {fileID: 6762082613208764158, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
+      propertyPath: cardsPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 1029087984118213315, guid: 201c99365b01f40468a6b97f0241b674, type: 3}
     - target: {fileID: 6762082613208764159, guid: 61e5368f5d35bad4f80e8ff250927f43, type: 3}
       propertyPath: m_Name
       value: CardDeck
