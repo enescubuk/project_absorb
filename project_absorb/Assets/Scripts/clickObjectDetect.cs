@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 public class clickObjectDetect : MonoBehaviour,IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public roomSO roomSO;
-    baseSelectController baseSelectController => GetComponentInParent<baseSelectController>();
+    public baseSelectController baseSelectController;
     public void OnPointerEnter(PointerEventData pointerEventData)
     {
         baseSelectController.enterRoomRange(gameObject,roomSO);

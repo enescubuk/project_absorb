@@ -202,6 +202,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48f644ebcce4ba249a3e4a8b124d081c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cardID: 7
   cardType: 0
   manaCost: 0
   hpGain: 0

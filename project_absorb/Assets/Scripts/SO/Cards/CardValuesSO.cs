@@ -6,6 +6,8 @@ public class CardValuesSO : ScriptableObject
 {
     public string cardName;
     public int cardMana;
+    public int cardID;
     public Sprite cardSprite;
     public GameObject cardPrefab;
+    
 }

@@ -4,18 +4,23 @@ using UnityEngine.EventSystems;
 
 public class CardSelectController : MonoBehaviour,IPointerClickHandler
 {
-    public CardDeckSO cardDeckSO;
+    public CardDeckScript cardDeck;
+
+    void Awake()
+    {
+        cardDeck = GameObject.FindWithTag("CardDeck").GetComponent<CardDeckScript>();
+    }
     public void OnPointerClick(PointerEventData pointerEventData)
     {
         
         if (transform.parent.name == "All Card")
         {
-            cardDeckSO.Set(this.gameObject);
+            cardDeck.addCard(this.gameObject.GetComponent<Card>().cardID);
             transform.SetParent(GameObject.FindGameObjectWithTag("OwnedCards").transform);
         }
         else
         {
-            cardDeckSO.removeCard(this.gameObject);
+            cardDeck.removeCard(this.gameObject.GetComponent<Card>().cardID);
             transform.SetParent(GameObject.FindGameObjectWithTag("AllCards").transform);
         }
     }

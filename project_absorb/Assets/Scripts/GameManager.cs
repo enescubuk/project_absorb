@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     public bool stuned;
 
     [Header("Cards")]
-    public List<GameObject> cards;
+    public List<GameObject> cards ;
     public Transform[] cardSlots;
     public bool[] availableCardSlots;
     //public GameObject[] playerCards;
@@ -64,6 +64,7 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+        List<int> selectedCards = CardDeckScript.CardDeck;
         //For Singelton
         if (current != null && current != this)
         {
@@ -72,6 +73,18 @@ public class GameManager : MonoBehaviour
         else
         {
             current = this;
+        }
+        for (int i = 0; i < CardDeckScript.current.cardsPrefabs.Count; i++)
+        {
+            for (int j = 0; j < selectedCards.Count; j++)
+            {
+                if (selectedCards[j] == CardDeckScript.current.cardsPrefabs[i].GetComponent<Card>().cardID)
+                {
+                    this.cards.Add(CardDeckScript.current.cardsPrefabs[i]);
+                    break;
+                }
+            }
+            
         }
     }
     void Start()
