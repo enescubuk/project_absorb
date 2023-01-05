@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class CardSelectController : MonoBehaviour,IPointerClickHandler
+public class DeckSelecter : MonoBehaviour,IPointerClickHandler
 {
     public CardDeckScript cardDeck;
 
@@ -12,7 +12,6 @@ public class CardSelectController : MonoBehaviour,IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        
         if (transform.parent.name == "All Card")
         {
             cardDeck.addCard(this.gameObject.GetComponent<Card>().cardID);
