@@ -9,6 +9,15 @@ public class DeckSelecter : MonoBehaviour,IPointerClickHandler
     void Awake()
     {
         cardDeck = GameObject.FindWithTag("CardDeck").GetComponent<CardDeckScript>();
+        foreach (int card_ID in CardDeckScript.CardDeck)
+        {
+            if (GetComponent<Card>().cardID == card_ID)
+            {
+                Debug.Log(transform.gameObject.name);
+                transform.SetParent(GameObject.FindGameObjectWithTag("OwnedCards").transform);
+                break;
+            }
+        }
     }
     public void OnPointerClick(PointerEventData pointerEventData)
     {
@@ -23,6 +32,4 @@ public class DeckSelecter : MonoBehaviour,IPointerClickHandler
             transform.SetParent(GameObject.FindGameObjectWithTag("AllCards").transform);
         }
     }
-
-    
 }
