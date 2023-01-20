@@ -24,7 +24,7 @@ public class RoomScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.current.wave == waveCount)
+        if (GameManager.current.wave == waveCount && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave)
         {
             GameManager.current.newCardRoom = true;
             

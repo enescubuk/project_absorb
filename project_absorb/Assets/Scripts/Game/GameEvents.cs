@@ -45,9 +45,9 @@ public class GameEvents : MonoBehaviour
     public event Action<int> EnemySpawn;
     public void ClearEnter(int enemyCount)
     {
-        if (GameManager.current.newCardRoom == false && enemyCount <= 0 )
+        if (GameManager.current.newCardRoom == false && enemyCount <= 0 && GameManager.current.isBossFight == false)
         {
-                
+                GameManager.current.CardByTurn();
                 EnemySpawn(enemyCount);
                 GameManager.current.wave++;
                 GameManager.current.NextButton.SetActive(true);

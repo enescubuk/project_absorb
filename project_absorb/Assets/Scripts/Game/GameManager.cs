@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
 
+    public int bossRoomNumber;
+    public bool isBossFight;
     public bool newCardRoom;
     public int wave;
     public bool isWalk;
@@ -101,11 +103,6 @@ public class GameManager : MonoBehaviour
         DrawCard(b);
         
         playerCards.Add(b);
-        
-        GameObject c = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
-        DrawCard(c);
-        playerCards.Add(c);
-        
     }
 
     private void FixedUpdate()
@@ -179,11 +176,10 @@ public class GameManager : MonoBehaviour
         }
 
     }
-    void CardByTurn()
+    public void CardByTurn()
     {
         GameObject a = Instantiate(cards[Random.Range(0, cards.Count)] , GameObject.Find("Card").transform);
         a.transform.localScale = new Vector3(1,1,1);
-        
         DrawCard(a);
         playerCards.Add(a);
 
