@@ -54,7 +54,7 @@ public class EnemyScript : MonoBehaviour
 
             gameManager.killCount++;
             gameManager.enemies.Remove(this.gameObject);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,0.4f);
             
         }
         else

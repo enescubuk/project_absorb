@@ -95,15 +95,15 @@ public class GameManager : MonoBehaviour
         
 
         //Get 3 Card From Start
-    // GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
-    // DrawCard(a);
-    // 
-    // playerCards.Add(a);
-    // 
-    // GameObject b = Instantiate(cards[Random.Range(0, cards.Count)],  GameObject.Find("Card").transform);
-    // DrawCard(b);
-    // 
-    // playerCards.Add(b);
+    GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
+    DrawCard(a);
+    
+    playerCards.Add(a);
+    
+    GameObject b = Instantiate(cards[Random.Range(0, cards.Count)],  GameObject.Find("Card").transform);
+    DrawCard(b);
+    
+    playerCards.Add(b);
     }
 
     private void FixedUpdate()
