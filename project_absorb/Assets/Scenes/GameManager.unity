@@ -286,6 +286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.4
+  bf: {fileID: 1442167904}
 --- !u!23 &189922420
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -737,6 +738,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.7
+  bf: {fileID: 1442167904}
 --- !u!23 &339899569
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1233,7 +1235,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b4ede747bdc4047a85fb9ed89f230d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bossRoomNumber: 3
+  canWalk: 0
+  bossRoomNumber: 10
   isBossFight: 0
   newCardRoom: 0
   wave: 0
@@ -2199,6 +2202,7 @@ MonoBehaviour:
   bossList:
   - {fileID: 9128490914483863085, guid: ee1a3f4aa1e18d8408e7db9f339f623b, type: 3}
   currentBoss: []
+  isBossSpawned: 0
 --- !u!4 &1442167905
 Transform:
   m_ObjectHideFlags: 0
@@ -2898,6 +2902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.5
+  bf: {fileID: 1442167904}
 --- !u!23 &1875516879
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3066,6 +3071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scrollSpeed: 0.1
+  bf: {fileID: 1442167904}
 --- !u!23 &1940560875
 MeshRenderer:
   m_ObjectHideFlags: 0

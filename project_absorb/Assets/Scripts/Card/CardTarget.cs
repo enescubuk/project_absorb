@@ -12,8 +12,10 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
     public void OnDrop(PointerEventData eventData)
     {
         
+        Sequence mySequence = DOTween.Sequence();
 
-        eventData.pointerDrag.gameObject.transform.DOMoveY(gameObject.transform.position.y,0.2f).SetEase(Ease.OutExpo);
+        mySequence.Append(eventData.pointerDrag.gameObject.transform.DOMoveY(gameObject.transform.position.y+50,0.1f)).Append(eventData.pointerDrag.gameObject.transform.DOMoveY(gameObject.transform.position.y,0.1f).SetEase(Ease.OutExpo));
+        //eventData.pointerDrag.gameObject.transform.DOMoveY(gameObject.transform.position.y,0.2f).SetEase(Ease.OutExpo);
         eventData.pointerDrag.gameObject.transform.DOMoveX(gameObject.transform.position.x,0.2f).SetEase(Ease.OutExpo);
         eventData.pointerDrag.gameObject.transform.DOScale(new Vector2(0.5f, 0.5f), 0.2f).SetEase(Ease.OutExpo);
         
@@ -34,7 +36,7 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
 
             gameManager.playerCards.Remove(eventData.pointerDrag.gameObject);
 
-            Destroy(eventData.pointerDrag.gameObject,0.2f);
+            Destroy(eventData.pointerDrag.gameObject,0.4f);
         }
         
 
@@ -77,13 +79,13 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
         {
             
         }
-        else
+        /* else
         {
             eventData.pointerDrag.gameObject.GetComponent<DragDrop>().onTarget = true;
             eventData.pointerDrag.gameObject.transform.DOMoveY(gameObject.transform.position.y+50,0.2f);
             eventData.pointerDrag.gameObject.transform.DOMoveX(gameObject.transform.position.x,0.2f);
             eventData.pointerDrag.gameObject.transform.DOScale(new Vector2(1f, 1f), 0.2f).SetEase(Ease.InCubic);
-        }
+        }*/
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -92,10 +94,10 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
         {
             
         }
-        else
+        /* else
         {
             eventData.pointerDrag.gameObject.transform.DOScale(new Vector2(1.3f, 1.3f), 0.2f).SetEase(Ease.InCubic);
             eventData.pointerDrag.gameObject.GetComponent<DragDrop>().onTarget = false;
-        }
+        }*/
     }
 }

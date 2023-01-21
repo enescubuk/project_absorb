@@ -8,6 +8,8 @@ public class BackgroundScroller : MonoBehaviour
     private float offset;
     private Material mat;
     bool iswalk;
+
+    public BossFight bf;
     void Start()
     {
         mat = GetComponent<Renderer>().material;
@@ -16,11 +18,17 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.current.enemies.Count <= 0 && GameManager.current.newCardRoom==false)
+        if ( bf.isBossSpawned || GameManager.current.enemies.Count <= 0 && GameManager.current.newCardRoom==false)
         {
+            GameManager.current.canWalk = true;
+
             offset += (Time.deltaTime * scrollSpeed) / 10f;
 
             mat.SetTextureOffset("_MainTex", new Vector2(offset, 0));
+        }
+        else
+        {
+            GameManager.current.canWalk = false;
         }    
         
     }
