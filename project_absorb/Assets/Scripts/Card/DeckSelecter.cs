@@ -21,7 +21,7 @@ public class DeckSelecter : MonoBehaviour,IPointerClickHandler
     }
     public void OnPointerClick(PointerEventData pointerEventData)
     {
-        if (transform.parent.name == "All Card")
+        if (transform.parent.name == "All Cards")
         {
             cardDeck.addCard(this.gameObject.GetComponent<Card>().cardID);
             transform.SetParent(GameObject.FindGameObjectWithTag("OwnedCards").transform);

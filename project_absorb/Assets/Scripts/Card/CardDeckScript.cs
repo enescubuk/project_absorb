@@ -36,16 +36,10 @@ public class CardDeckScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            //Debug.Log("asd");
             foreach (int card in CardDeck)
             {
-                //Debug.Log("dsa");
-                //Debug.Log(card);
+                Debug.Log(card);
             }
-        }
-        else if (Input.GetKeyDown(KeyCode.A))
-        {
-            SceneManager.LoadScene("GameManager");
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
