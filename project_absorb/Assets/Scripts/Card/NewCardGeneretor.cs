@@ -27,7 +27,7 @@ public class NewCardGeneretor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.current.newCardRoom && a < 2 && GameManager.current.enemies.Count == 0)
+        if (GameManager.current.newCardRoom && a < 2 && GameManager.current.enemies.Count == 0 && GameManager.current.isBossFight == false)
         {
             
             newCardPanel.SetActive(true);
