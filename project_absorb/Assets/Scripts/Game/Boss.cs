@@ -18,8 +18,8 @@ public class Boss : MonoBehaviour
             
             GameManager.current.playerAnim.SetBool("Run",false);
             GameManager.current.endGame = true;
-            GameManager.current.pathObject.SetActive(true);
-            GameManager.current.gameUI.SetActive(false);
+            GameManager.current.UIAnim.PanelFadeIn();
+            GameManager.current.UIAnim.PanelFadeOut();
             GameManager.current.enabled = false;
             GameEvents.current.gameObject.SetActive(false);
             

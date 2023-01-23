@@ -10,8 +10,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
 
-    public GameObject gameUI;
-    public GameObject pathObject;
+    public PanelAnimation UIAnim;
     public bool endGame;
     public bool canWalk;
     public int bossRoomNumber;
