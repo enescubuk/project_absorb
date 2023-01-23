@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
 
+    public GameObject gameUI;
+    public GameObject pathObject;
+    public bool endGame;
     public bool canWalk;
     public int bossRoomNumber;
     public bool isBossFight;
@@ -175,15 +178,17 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        //Kill Count
-        PlayerPrefs.SetInt("KillCount", killCount);
-        killText.text = "Kill Count: " + killCount;
+        
 
         //Die
         if (playerHp <= 0)
         {
         SceneManager.LoadScene("finish");
         }
+
+
+        //End Room
+        
 
     }
     public void CardByTurn()

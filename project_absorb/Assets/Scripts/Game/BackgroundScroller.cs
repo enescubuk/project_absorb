@@ -18,7 +18,7 @@ public class BackgroundScroller : MonoBehaviour
 
     void Update()
     {
-        if ( bf.isBossSpawned || GameManager.current.enemies.Count <= 0 && GameManager.current.newCardRoom==false)
+        if ( bf.isBossSpawned || GameManager.current.enemies.Count <= 0 && GameManager.current.newCardRoom==false && GameManager.current.endGame == false)
         {
             GameManager.current.canWalk = true;
 

@@ -170,7 +170,6 @@ GameObject:
   - component: {fileID: 5065447507003705923}
   - component: {fileID: 4221923278911398295}
   - component: {fileID: 6498908664538710504}
-  - component: {fileID: -7071444472287793818}
   m_Layer: 0
   m_Name: Card_Mana1
   m_TagString: Untagged
@@ -289,15 +288,3 @@ MonoBehaviour:
   stunTurn: 0
   absorbSkill: 0
   slot: 0
---- !u!114 &-7071444472287793818
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8564663502008333693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 13dc83706d7d12349b35eba901a01f89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
