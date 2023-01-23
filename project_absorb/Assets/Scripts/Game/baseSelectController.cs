@@ -78,7 +78,7 @@ public class baseSelectController : MonoBehaviour
 
     public void exitRoomRange(GameObject room,roomSO roomSO)
     {
-        
+
     }
 
     void setValues(GameObject room,roomSO roomSO)
@@ -90,12 +90,11 @@ public class baseSelectController : MonoBehaviour
     void inMoveBoxs()
     {
         isRoomOpen = true;
-        Debug.Log("in");
         goIn();
     }
     void goIn()
     {
-        roomSprite.transform.DOMoveX(firstPosSprite.x + 12.75f ,1f);
+        roomSprite.transform.DOMoveX(firstPosSprite.x + 19.5f ,1f);
         textParents.transform.DOMoveY(firstPosTexts.y + 8.05f ,1f);
         close_button.DOMoveY(close_button.position.y + 32.5f,1);
     }

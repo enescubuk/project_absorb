@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: General Room
   roomDescription: "Buras\u0131 generalin odas\u0131.. \xC7abuk \xF6n\xFCn\xFC ilikle!!!"
-  roomSprite: {fileID: 21300000, guid: 15d82952d7d6c7a4b8c05b8e32325259, type: 3}
+  roomSprite: {fileID: 21300000, guid: 7603d864acee33649a6c13458aee35f1, type: 3}
   roomPrefab: {fileID: 0}

@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   roomName: Card Trainer Room
   roomDescription: imamhatip mezunu hoca
-  roomSprite: {fileID: 21300000, guid: b9616773e390388498695428143f8044, type: 3}
+  roomSprite: {fileID: 21300000, guid: bbc5b73cd7bf62f4b81c3ef0ee918203, type: 3}
   roomPrefab: {fileID: 0}
