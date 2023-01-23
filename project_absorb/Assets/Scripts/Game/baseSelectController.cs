@@ -27,8 +27,6 @@ public class baseSelectController : MonoBehaviour
     public GameObject GeneralRoom;
 
 
-
-
     void Awake()
     {
         lastCameraPos = camera.transform.position;
@@ -40,6 +38,7 @@ public class baseSelectController : MonoBehaviour
     public void enterRoomRange(GameObject room,roomSO roomSO)
     {
         setValues(room,roomSO);
+        
     }
 
     public void clickRoom(GameObject room,roomSO roomSO)
@@ -49,7 +48,6 @@ public class baseSelectController : MonoBehaviour
             targetRoom = room;
             camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y,lastCameraPos.z),1);
             DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 100, 1);
-            Debug.Log(roomSprite.gameObject.transform.position);
             Invoke("inMoveBoxs",0.3f);
         }
         else
@@ -97,8 +95,8 @@ public class baseSelectController : MonoBehaviour
     }
     void goIn()
     {
-        roomSprite.gameObject.transform.DOMoveX(firstPosSprite.x + 12.75f + 34,1f);
-        textParents.transform.DOMoveY(firstPosTexts.y + 7.75f + 20,1f);
+        roomSprite.transform.DOMoveX(firstPosSprite.x + 12.75f ,1f);
+        textParents.transform.DOMoveY(firstPosTexts.y + 8.05f ,1f);
         close_button.DOMoveY(close_button.position.y + 32.5f,1);
     }
     public void outMoveBoxs()
@@ -116,8 +114,9 @@ public class baseSelectController : MonoBehaviour
 
     void goOut()
     {
-        roomSprite.gameObject.transform.DOMoveX(firstPosSprite.x + 34,1f);
-        textParents.transform.DOMoveY(firstPosTexts.y +20,1f);
+        roomSprite.transform.DOMoveX(firstPosSprite.x,1f);
+        textParents.transform.DOMoveY(firstPosTexts.y,1f);
+        
         
     }
 
