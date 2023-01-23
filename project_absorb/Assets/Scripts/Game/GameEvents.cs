@@ -47,6 +47,7 @@ public class GameEvents : MonoBehaviour
     {
         if (GameManager.current.newCardRoom == false && enemyCount <= 0 && GameManager.current.isBossFight == false)
         {
+                Debug.Log(77);
                 GameManager.current.CardByTurn();
                 EnemySpawn(enemyCount);
                 GameManager.current.wave++;

@@ -16,8 +16,7 @@ public class NewCardSelector : MonoBehaviour, IPointerClickHandler
         b.transform.localScale = new Vector3(1,1,1);
         GameManager.current.DrawCard(b);
         GameManager.current.playerCards.Add(b);
-
-        RoomScript.current.NewWave();
+        RoomScript.current.NewWave(0);
         NewCardGeneretor.current.newCardPanel.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.GetChild(0).gameObject.transform.parent = NewCardGeneretor.current.parent.transform;
         NewCardGeneretor.current.newCardPanel.transform.GetChild(0).gameObject.transform.GetChild(1).gameObject.transform.GetChild(0).gameObject.transform.parent = NewCardGeneretor.current.parent.transform;
         NewCardGeneretor.current.newCardPanel.SetActive(false);

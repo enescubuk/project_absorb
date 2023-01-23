@@ -46,7 +46,7 @@ public class EnemySpawn : MonoBehaviour
         
     }
 
-    IEnumerator SpawnDelay()
+    public IEnumerator SpawnDelay()
     {
         
         yield return new WaitForSeconds(GameManager.current.spawnDelay);
