@@ -15,8 +15,7 @@ public class Card : MonoBehaviour
     public bool stunCard;
     public int stunTurn;
     public bool absorbSkill;
-
-
+    public EffectSO effect;
     public int slot;
     
     public void attackPlayer()
@@ -50,6 +49,13 @@ public class Card : MonoBehaviour
                 GameManager.current.playerHp += hpGain;
 
                 break;
+            case 3: // Bleed Card
+                effect.Effect(enemy);
+                enemy.GetComponent<EnemyScript>().hp -= attackPoint;
+                
+                break;
+                
+            
         }
 
         GameManager.current.playerMana -= manaCost;

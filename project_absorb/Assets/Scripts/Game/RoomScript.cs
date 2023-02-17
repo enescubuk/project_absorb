@@ -20,6 +20,8 @@ public class RoomScript : MonoBehaviour
         {
             current = this;
         }
+
+        
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -33,19 +35,14 @@ public class RoomScript : MonoBehaviour
         {
             GameManager.current.newCardRoom = false;
         }
-        //Başka bir event yoluyla çağıralacak
-        if (Input.GetButtonDown("Jump"))
-        {
-            waveCount += wavePeriod;
-            GameEvents.current.ClearEnter(0);
-        }
     }
 
 
-    public void NewWave()
+    public void NewWave(int a)
     {
+        Debug.Log(99);
         waveCount += wavePeriod;
-        GameEvents.current.ClearEnter(0);
+        GameEvents.current.StartCoroutine("SpawnDelay");
 
     }
     

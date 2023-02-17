@@ -203,14 +203,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardID: 7
-  cardType: 0
+  cardType: 3
   manaCost: 0
   hpGain: 0
-  attackPoint: 100
+  attackPoint: 3
   manaGain: 0
   stunCard: 1
   stunTurn: 0
   absorbSkill: 0
+  effect: {fileID: 11400000, guid: 0acf136154407dc489ba6afdf0bb80a7, type: 2}
   slot: 0
 --- !u!1 &4786478913482046260
 GameObject:

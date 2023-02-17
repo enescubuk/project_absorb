@@ -13,8 +13,6 @@ public class EnemyScript : MonoBehaviour
 
     public int cardType;
 
-    
-
     public int id;
 
     public int turnNumber;
@@ -41,7 +39,6 @@ public class EnemyScript : MonoBehaviour
         if (id == this.turnNumber)
         {
             StartCoroutine(UseCard());
-
         }
     }
     public void HpController(int id)
@@ -54,7 +51,7 @@ public class EnemyScript : MonoBehaviour
 
             gameManager.killCount++;
             gameManager.enemies.Remove(this.gameObject);
-            Destroy(this.gameObject);
+            Destroy(this.gameObject,0.4f);
             
         }
         else
@@ -70,9 +67,18 @@ public class EnemyScript : MonoBehaviour
         transform.GetChild(1).GetComponent<Text>().text = "" + hp;
     }
 
+
     IEnumerator UseCard()
     {
-
+        if (GetComponent<Effect>() == true)
+        {
+            for (int i = 0; i < GetComponents<Effect>().Length-1; i++)
+            {
+                GetComponents<Effect>()[i].EffectEnemy();
+            }
+            GetComponent<Effect>().EffectEnemy();
+            Debug.Log(55);
+        }
         GetComponent<Animator>().SetTrigger("Attack");
         gameManager.playerAnim.SetTrigger("Hit");
         card.GetComponent<Card>().attackPlayer();

@@ -10,6 +10,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager current;
 
+    public PanelAnimation UIAnim;
+    public bool endGame;
+    public bool canWalk;
     public int bossRoomNumber;
     public bool isBossFight;
     public bool newCardRoom;
@@ -94,19 +97,28 @@ public class GameManager : MonoBehaviour
         
 
         //Get 3 Card From Start
-        GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
-        DrawCard(a);
-        
-        playerCards.Add(a);
-        
-        GameObject b = Instantiate(cards[Random.Range(0, cards.Count)],  GameObject.Find("Card").transform);
-        DrawCard(b);
-        
-        playerCards.Add(b);
+    GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
+    DrawCard(a);
+    
+    playerCards.Add(a);
+    
+    GameObject b = Instantiate(cards[Random.Range(0, cards.Count)],  GameObject.Find("Card").transform);
+    DrawCard(b);
+    
+    playerCards.Add(b);
     }
 
     private void FixedUpdate()
     {
+        if (canWalk == true)
+        {
+            playerAnim.SetBool("Run",true);
+        }
+        else
+        {
+            playerAnim.SetBool("Run",false);
+        }
+
         HealthAndManaSystem();
 
         if (availableCardSlots[0] == false && availableCardSlots[1] == false && availableCardSlots[2] == false && availableCardSlots[3] == false && availableCardSlots[4] == false)
@@ -165,15 +177,17 @@ public class GameManager : MonoBehaviour
                 break;
         }
 
-        //Kill Count
-        PlayerPrefs.SetInt("KillCount", killCount);
-        killText.text = "Kill Count: " + killCount;
+        
 
         //Die
         if (playerHp <= 0)
         {
         SceneManager.LoadScene("finish");
         }
+
+
+        //End Room
+        
 
     }
     public void CardByTurn()
@@ -182,7 +196,6 @@ public class GameManager : MonoBehaviour
         a.transform.localScale = new Vector3(1,1,1);
         DrawCard(a);
         playerCards.Add(a);
-
     }
 
     public void DrawCard(GameObject card)

@@ -30,6 +30,23 @@ public class GameEvents : MonoBehaviour
 
     }
 
+    public event Action<int> Effect;
+
+    public void EffectAction(GameObject target, EffectSO so)
+    {
+
+        if (target.tag == "Player")
+        {
+            GameManager.current.playerHp -= so.effectDamage;
+
+        }
+        else
+        {
+            target.GetComponent<EnemyScript>().hp -= so.effectDamage;
+        }
+
+    }
+
     public event Action<int> Turn;
 
     public void TurnEnter(int id,int currentTurn)
@@ -47,6 +64,7 @@ public class GameEvents : MonoBehaviour
     {
         if (GameManager.current.newCardRoom == false && enemyCount <= 0 && GameManager.current.isBossFight == false)
         {
+                Debug.Log(77);
                 GameManager.current.CardByTurn();
                 EnemySpawn(enemyCount);
                 GameManager.current.wave++;

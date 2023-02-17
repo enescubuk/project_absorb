@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class BossFight : MonoBehaviour
 {
-    
-
     public Transform spawnPoint;
 
     public List<GameObject> bossList;
@@ -13,6 +11,10 @@ public class BossFight : MonoBehaviour
     public List<GameObject> currentBoss;
 
     GameObject currentBosss;
+
+    public bool isBossSpawned;
+
+    GameObject theBoss;
     void Start()
     {
         if (GameManager.current.wave == GameManager.current.bossRoomNumber)
@@ -23,12 +25,10 @@ public class BossFight : MonoBehaviour
 
     void FixedUpdate()
     {
+
         if (GameManager.current.wave == GameManager.current.bossRoomNumber - 1 && GameManager.current.isBossFight == false && GameManager.current.enemies.Count == 0)
         {
-            
-            StartCoroutine(BossFightDelay());
-            
-
+            BossFightCondition();
         }
 
         if (GameManager.current.isBossFight == true && currentBosss == null)
@@ -37,8 +37,14 @@ public class BossFight : MonoBehaviour
             //GameManager.current.wave++;
             GameManager.current.isBossFight = false;
             GameManager.current.enemies.Clear();
-            Destroy(this.gameObject);
+            
+            
         }
+        if (isBossSpawned == true)
+        {
+            Invoke("delay",3);
+        }
+
         
     }
     // Update is called once per frame
@@ -46,16 +52,21 @@ public class BossFight : MonoBehaviour
     {
         GameManager.current.CardByTurn();
         GameObject a = Instantiate(bossList[0], GameObject.Find("Enemy").transform);
+        a.transform.localScale = new Vector3(0,0,0);
         a.transform.localPosition = new Vector3(spawnPoint.localPosition.x, spawnPoint.localPosition.y, 10);
+        a.AddComponent<Boss>();
         GameManager.current.enemies.Add(a);
         GameManager.current.isBossFight = true;
         GameManager.current.NextButton.SetActive(true);
+        isBossSpawned = true;
+        theBoss = a;
+        
     }
-
-    IEnumerator BossFightDelay()
+    void delay()
     {
-
-        yield return new WaitForSeconds(GameManager.current.spawnDelay);
-        BossFightCondition();
+        
+        theBoss.transform.localScale = new Vector3(-2,2,-2);
+        isBossSpawned = false;
+        Destroy(this.gameObject);
     }
 }
