@@ -13,7 +13,7 @@ public class baseSelectController : MonoBehaviour
     public GameObject textParents;
     public Image roomSprite;
     private GameObject targetRoom;
-    public Camera camera;
+    private new Camera camera;
     private Vector3 lastCameraPos;
     private float lastCameraSize;
     Vector3 firstPosSprite,firstPosTexts;
