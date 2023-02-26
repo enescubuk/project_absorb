@@ -67,10 +67,10 @@ public class baseSelectController : MonoBehaviour
                 clickingRoom = CardTrainerRoom;
                     break;
             case "General":
-                clickingRoom = CardTrainerRoom;
+                //clickingRoom = CardTrainerRoom;
                     break;
             case "Recruiter":
-                clickingRoom = CardTrainerRoom;
+                clickingRoom = RecruiterRoom;
                     break;
         }
         return clickingRoom;
