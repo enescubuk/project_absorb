@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Attack_Card
   cardMana: 2
+  cardID: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
+  cardCostOfSale: 125
   attackValue: 5

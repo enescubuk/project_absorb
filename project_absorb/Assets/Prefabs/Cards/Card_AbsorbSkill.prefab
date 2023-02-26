@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1359098270152948437}
   - component: {fileID: 1359098270152948434}
   - component: {fileID: 6992068783029622460}
+  - component: {fileID: 893299337867159346}
   m_Layer: 0
   m_Name: Card_AbsorbSkill
   m_TagString: Untagged
@@ -132,7 +133,22 @@ MonoBehaviour:
   stunCard: 0
   stunTurn: 0
   absorbSkill: 1
+  effect: {fileID: 0}
   slot: 0
+--- !u!114 &893299337867159346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359098270152948456}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7105807a61979499b402b9031ad2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardValuesSO: {fileID: 11400000, guid: dcc5c4b0d1eaadd40944041fb2d25ce2, type: 2}
+  carmanaCost_Text: {fileID: 0}
 --- !u!1 &5048884654057722066
 GameObject:
   m_ObjectHideFlags: 0

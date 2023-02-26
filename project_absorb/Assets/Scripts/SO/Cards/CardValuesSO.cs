@@ -9,5 +9,5 @@ public class CardValuesSO : ScriptableObject
     public int cardID;
     public Sprite cardSprite;
     public GameObject cardPrefab;
-    
+    public int cardCostOfSale;
 }
