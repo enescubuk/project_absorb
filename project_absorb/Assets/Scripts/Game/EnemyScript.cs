@@ -17,15 +17,14 @@ public class EnemyScript : MonoBehaviour
 
     public int turnNumber;
 
+    public int currentEffectDamage;
+
     GameManager gameManager => GameManager.current;
     void Start()
     {
         gameManager.enemies.Add(gameObject);
 
         turnNumber = gameManager.enemies.IndexOf(gameObject);
-
-        transform.GetChild(0).GetComponent<Slider>().maxValue = hp;
-
 
         GameEvents.current.Dead += HpController;
 
@@ -63,8 +62,14 @@ public class EnemyScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.GetChild(0).GetComponent<Slider>().value = hp;
-        transform.GetChild(1).GetComponent<Text>().text = "" + hp;
+        if (GetComponent<Effect>() == true)
+        {
+            currentEffectDamage = GetComponent<Effect>().effectSO.currentDamage;
+        }
+        else
+        {
+            currentEffectDamage = 0;
+        }
     }
 
 
@@ -72,11 +77,16 @@ public class EnemyScript : MonoBehaviour
     {
         if (GetComponent<Effect>() == true)
         {
-            for (int i = 0; i < GetComponents<Effect>().Length-1; i++)
+            hp-= GetComponent<Effect>().effectSO.currentDamage;
+            GetComponent<Effect>().effectSO.currentDamage--;
+            GameEvents.current.DeadEnter(id, hp);
+            for (int i = 0; i < GetComponents<Effect>().Length; i++)
             {
+
                 GetComponents<Effect>()[i].EffectEnemy();
             }
-            GetComponent<Effect>().EffectEnemy();
+            
+
             Debug.Log(55);
         }
         GetComponent<Animator>().SetTrigger("Attack");

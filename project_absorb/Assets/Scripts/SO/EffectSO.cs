@@ -11,9 +11,17 @@ public class EffectSO : ScriptableObject
     public int effectDuration;
     public int effectDamage;
 
+    public int currentDamage;
+
+    public void Reset() {
+        currentDamage = 0;
+    }
     public void Effect(GameObject target)
     {
-        target.AddComponent<Effect>();
-        target.GetComponent<Effect>().effectSO = this;
+        Effect a = target.AddComponent<Effect>();
+        a.effectSO = this;
+        currentDamage += effectDamage;
     }
+    
+
 }

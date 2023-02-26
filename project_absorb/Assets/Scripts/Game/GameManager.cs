@@ -9,7 +9,6 @@ using DG.Tweening;
 public class GameManager : MonoBehaviour
 {
     public static GameManager current;
-
     public PanelAnimation UIAnim;
     public bool endGame;
     public bool canWalk;
@@ -88,8 +87,7 @@ public class GameManager : MonoBehaviour
                     this.cards.Add(CardDeckScript.current.cardsPrefabs[i]);
                     break;
                 }
-            }
-            
+            } 
         }
     }
     void Start()
@@ -182,7 +180,7 @@ public class GameManager : MonoBehaviour
         //Die
         if (playerHp <= 0)
         {
-        SceneManager.LoadScene("finish");
+     //   SceneManager.LoadScene("finish");
         }
 
 

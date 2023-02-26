@@ -10,10 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 708924d537894704490a93cceb518a69, type: 3}
-  m_Name: Try
+  m_Name: Bleed
   m_EditorClassIdentifier: 
   effectType: Bleed
-  effectNumber: 0
+  effectNumber: 1
   effectDuration: 2
-  effectDamage: 1
-  currentDamage: 100
+  effectDamage: 2

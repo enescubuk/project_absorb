@@ -7,28 +7,38 @@ public class Effect : MonoBehaviour
     
     public EffectSO effectSO;
 
-    int firstTurn, lastTurn, duration;
-
-    
-    
+    int duration;
     void Awake()
     {
-        firstTurn = GameManager.current.turnNumber;
-        lastTurn = GameManager.current.turnNumber + duration; 
         
     }
-    
+
+    private void Start() {
+        
+        duration = effectSO.effectDuration;
+        if (GetComponent<Effect>() == this)
+        {
+            effectSO.currentDamage = 1;
+        }
+    }
     public void EffectEnemy()
     {
-        
-        GetComponent<EnemyScript>().hp -= effectSO.effectDamage;
-        
+
+        if (effectSO.currentDamage < 1)
+        {
+            Destroy(this);
+        }
+        //GetComponent<EnemyScript>().hp -= effectSO.effectDamage;
     }
 
     public void EffectPlayer()
     {
-
         GameManager.current.playerHp -= effectSO.effectDamage;
+        if (duration <= 0)
+        {
+            Destroy(this);
+        }
+        duration--;
     }
 
 }

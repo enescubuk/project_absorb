@@ -30,23 +30,6 @@ public class GameEvents : MonoBehaviour
 
     }
 
-    public event Action<int> Effect;
-
-    public void EffectAction(GameObject target, EffectSO so)
-    {
-
-        if (target.tag == "Player")
-        {
-            GameManager.current.playerHp -= so.effectDamage;
-
-        }
-        else
-        {
-            target.GetComponent<EnemyScript>().hp -= so.effectDamage;
-        }
-
-    }
-
     public event Action<int> Turn;
 
     public void TurnEnter(int id,int currentTurn)
