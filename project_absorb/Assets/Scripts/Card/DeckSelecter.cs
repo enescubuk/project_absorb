@@ -6,8 +6,9 @@ public class DeckSelecter : MonoBehaviour,IPointerClickHandler
 {
     public CardDeckScript cardDeck;
 
-    void Awake()
+    void setParent()
     {
+        Debug.Log(31);
         cardDeck = GameObject.FindWithTag("CardDeck").GetComponent<CardDeckScript>();
         foreach (int card_ID in CardDeckScript.CardDeck)
         {
@@ -18,6 +19,10 @@ public class DeckSelecter : MonoBehaviour,IPointerClickHandler
                 break;
             }
         }
+    }
+    void OnEnable()
+    {
+        setParent();
     }
     public void OnPointerClick(PointerEventData pointerEventData)
     {

@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: Absorb_Heal
   cardMana: 1
+  cardID: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
+  cardCostOfSale: 100
   stealHealValue: 4

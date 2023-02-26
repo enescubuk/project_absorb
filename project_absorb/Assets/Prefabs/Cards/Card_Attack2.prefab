@@ -250,6 +250,7 @@ GameObject:
   - component: {fileID: 2642219754871821982}
   - component: {fileID: 2411978633391387355}
   - component: {fileID: 5553243855564663175}
+  - component: {fileID: 7778554332473197678}
   m_Layer: 0
   m_Name: Card_Attack2
   m_TagString: Untagged
@@ -368,4 +369,19 @@ MonoBehaviour:
   stunCard: 0
   stunTurn: 0
   absorbSkill: 0
+  effect: {fileID: 0}
   slot: 0
+--- !u!114 &7778554332473197678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8419566619944553948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7105807a61979499b402b9031ad2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardValuesSO: {fileID: 11400000, guid: b961eed0631dc6c44a343c28e1a7608b, type: 2}
+  carmanaCost_Text: {fileID: 0}
