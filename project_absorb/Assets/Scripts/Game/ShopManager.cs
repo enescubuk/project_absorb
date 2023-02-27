@@ -13,8 +13,7 @@ public class ShopManager : MonoBehaviour
     public GameObject[] texts;
     public CharacterDataSO characterData;
 
-
-    public CardDeckScript cardDeckScript;
+    public TMP_Text coinText;
     void Start()
     {
         randomFourItem();
@@ -84,9 +83,9 @@ public class ShopManager : MonoBehaviour
                     break ;
         }
         texts[buttonTextArrayNumber].gameObject.GetComponentInParent<Button>().interactable = false;
-        characterData.Money -= currentAisle[buttonTextArrayNumber].GetComponent<ItemSO>().cardValuesSO.cardCostOfSale;
-        Debug.Log(currentAisle[buttonTextArrayNumber].GetComponent<Card>().cardID);
-        cardDeckScript.addCard(currentAisle[buttonTextArrayNumber].GetComponent<Card>().cardID);
+        characterData.Money -= int.Parse(texts[buttonTextArrayNumber].GetComponent<TMP_Text>().text);
+        setCoinText();
+        CardDeckScript.current.addCard(currentAisle[buttonTextArrayNumber].GetComponent<Card>().cardID);
     }
 
     void createCard()
@@ -105,5 +104,11 @@ public class ShopManager : MonoBehaviour
             }
         }
         checkAisleForSale();
+    }
+
+
+    void setCoinText()
+    {
+        coinText.text = characterData.Money.ToString();
     }
 }
