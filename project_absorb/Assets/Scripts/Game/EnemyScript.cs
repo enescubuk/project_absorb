@@ -64,7 +64,7 @@ public class EnemyScript : MonoBehaviour
     {
         if (GetComponent<Effect>() == true)
         {
-            currentEffectDamage = GetComponent<Effect>().effectSO.currentDamage;
+            currentEffectDamage = GetComponent<Effect>().duration;
         }
         else
         {
@@ -77,16 +77,8 @@ public class EnemyScript : MonoBehaviour
     {
         if (GetComponent<Effect>() == true)
         {
-            hp-= GetComponent<Effect>().effectSO.currentDamage;
-            GetComponent<Effect>().effectSO.currentDamage--;
+            GetComponent<Effect>().EffectEnemy();
             GameEvents.current.DeadEnter(id, hp);
-            for (int i = 0; i < GetComponents<Effect>().Length; i++)
-            {
-
-                GetComponents<Effect>()[i].EffectEnemy();
-            }
-            
-
             Debug.Log(55);
         }
         GetComponent<Animator>().SetTrigger("Attack");

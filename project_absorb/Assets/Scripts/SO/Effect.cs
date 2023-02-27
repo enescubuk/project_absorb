@@ -7,7 +7,7 @@ public class Effect : MonoBehaviour
     
     public EffectSO effectSO;
 
-    int duration;
+    public int duration;
     void Awake()
     {
         
@@ -15,7 +15,7 @@ public class Effect : MonoBehaviour
 
     private void Start() {
         
-        duration = effectSO.effectDuration;
+        
         if (GetComponent<Effect>() == this)
         {
             effectSO.currentDamage = 1;
@@ -23,12 +23,13 @@ public class Effect : MonoBehaviour
     }
     public void EffectEnemy()
     {
-
+        
         if (effectSO.currentDamage < 1)
         {
             Destroy(this);
         }
-        //GetComponent<EnemyScript>().hp -= effectSO.effectDamage;
+        GetComponent<EnemyScript>().hp -= duration;
+        duration--;
     }
 
     public void EffectPlayer()
