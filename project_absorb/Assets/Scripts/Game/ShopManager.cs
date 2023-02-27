@@ -84,7 +84,7 @@ public class ShopManager : MonoBehaviour
                     break ;
         }
         texts[buttonTextArrayNumber].gameObject.GetComponentInParent<Button>().interactable = false;
-        characterData.Money -= currentAisle[buttonTextArrayNumber].GetComponent<ItemSO>().cardValuesSO.cardCostOfSale;
+        characterData.Money -= int.Parse(texts[buttonTextArrayNumber].GetComponent<TMP_Text>().text);
         Debug.Log(currentAisle[buttonTextArrayNumber].GetComponent<Card>().cardID);
         cardDeckScript.addCard(currentAisle[buttonTextArrayNumber].GetComponent<Card>().cardID);
     }
