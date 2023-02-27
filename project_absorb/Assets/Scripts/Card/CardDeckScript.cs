@@ -25,6 +25,7 @@ public class CardDeckScript : MonoBehaviour
 
     public void addCard(int cardID)
     {
+        Debug.Log(31);
         CardDeck.Add(cardID);
     }
     public void removeCard(int cardID)
