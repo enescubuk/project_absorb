@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 6877479114970537139}
   - component: {fileID: 8104680507418973077}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Mana Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -111,8 +111,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -164, y: 237.5}
-  m_SizeDelta: {x: 78.868, y: 71.698}
+  m_AnchoredPosition: {x: -163.16238, y: 236.76}
+  m_SizeDelta: {x: 123.6652, y: 126.48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6877479114970537139
 CanvasRenderer:
@@ -191,8 +191,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 29.4596, y: -207.89526}
-  m_SizeDelta: {x: 294.3303, y: 77.7906}
+  m_AnchoredPosition: {x: 31.957294, y: -211.25877}
+  m_SizeDelta: {x: 319.8269, y: 103.0968}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7829206899105041681
 CanvasRenderer:
@@ -384,4 +384,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardValuesSO: {fileID: 11400000, guid: 647f0c394df49124f96e559800f7d511, type: 2}
-  carmanaCost_Text: {fileID: 0}

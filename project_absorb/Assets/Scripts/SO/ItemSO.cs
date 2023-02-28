@@ -6,12 +6,12 @@ using UnityEngine.EventSystems;
 public class ItemSO : MonoBehaviour
 {
     public CardValuesSO cardValuesSO;
-    private Text cardname_Text => GetComponentInChildren<Text>();
-    public Text carmanaCost_Text;
+    public Text cardname_Text => gameObject.transform.Find("Name Text").GetComponent<Text>();
+    public Text carmanaCost_Text => gameObject.transform.Find("Mana Text").GetComponent<Text>();
     void Awake()
     {
-        cardname_Text.text = cardValuesSO.cardName;
-        //carmanaCost_Text.text = cardValuesSO.cardMana.ToString();
+        cardname_Text.text = cardValuesSO.cardName.ToString();
+        carmanaCost_Text.text = cardValuesSO.cardMana.ToString();
     }
 
 }

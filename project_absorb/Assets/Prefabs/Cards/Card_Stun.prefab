@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &129985826888907381
+--- !u!1 &246435496340717530
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1031751232529278207}
-  - component: {fileID: 6968061406276097887}
-  - component: {fileID: 4342560079430867273}
+  - component: {fileID: 4901280488197941248}
+  - component: {fileID: 1458531922613142524}
+  - component: {fileID: 3913487387130870186}
   m_Layer: 0
-  m_Name: Text
+  m_Name: Mana Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &1031751232529278207
+--- !u!224 &4901280488197941248
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129985826888907381}
+  m_GameObject: {fileID: 246435496340717530}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -35,24 +35,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -161.38426, y: 237.19182}
-  m_SizeDelta: {x: 79.3125, y: 65.512}
+  m_AnchoredPosition: {x: -162.13, y: 236.75523}
+  m_SizeDelta: {x: 125.74, y: 126.4995}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6968061406276097887
+--- !u!222 &1458531922613142524
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129985826888907381}
+  m_GameObject: {fileID: 246435496340717530}
   m_CullTransparentMesh: 1
---- !u!114 &4342560079430867273
+--- !u!114 &3913487387130870186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 129985826888907381}
+  m_GameObject: {fileID: 246435496340717530}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -68,7 +68,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: f1f4ea0cf1aa2384a93038533ab7dc7c, type: 3}
-    m_FontSize: 68
+    m_FontSize: 75
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 9
@@ -79,7 +79,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: 3
 --- !u!1 &1029087984118213315
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,6 +94,7 @@ GameObject:
   - component: {fileID: 6006599091337611113}
   - component: {fileID: 7472496937249587231}
   - component: {fileID: 1689275336542091519}
+  - component: {fileID: -3315800025616763890}
   m_Layer: 0
   m_Name: Card_Stun
   m_TagString: Untagged
@@ -114,7 +115,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3741250061428769437}
-  - {fileID: 1031751232529278207}
+  - {fileID: 4901280488197941248}
+  - {fileID: 4977105283792793219}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -213,6 +215,99 @@ MonoBehaviour:
   absorbSkill: 0
   effect: {fileID: 11400000, guid: 0acf136154407dc489ba6afdf0bb80a7, type: 2}
   slot: 0
+--- !u!114 &-3315800025616763890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1029087984118213315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f7105807a61979499b402b9031ad2f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardValuesSO: {fileID: 11400000, guid: 609d7f3b92c3ce6409b8a3862acf1ad3, type: 2}
+--- !u!1 &4599366774722903251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4977105283792793219}
+  - component: {fileID: 6640545525578087051}
+  - component: {fileID: 4212493615918804260}
+  m_Layer: 0
+  m_Name: Name Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &4977105283792793219
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599366774722903251}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3752782795023132318}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 29.191, y: -203.8729}
+  m_SizeDelta: {x: 325.2839, y: 107.5532}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &6640545525578087051
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599366774722903251}
+  m_CullTransparentMesh: 1
+--- !u!114 &4212493615918804260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599366774722903251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.49056602, g: 0.038475767, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: f1f4ea0cf1aa2384a93038533ab7dc7c, type: 3}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 50
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Absorb Heal
 --- !u!1 &4786478913482046260
 GameObject:
   m_ObjectHideFlags: 0
