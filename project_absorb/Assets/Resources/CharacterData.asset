@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CharacterData
   m_EditorClassIdentifier: 
   level: 1
-  money: 98340
+  money: 9
   health: 100
+  xp: 88

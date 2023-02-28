@@ -2217,6 +2217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b4ede747bdc4047a85fb9ed89f230d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterDataSO: {fileID: 11400000, guid: 86511d382e2117e4490cd58fdeb7c7b1, type: 2}
   UIAnim: {fileID: 5696256541097433428}
   endGame: 0
   canWalk: 0
