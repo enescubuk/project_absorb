@@ -11,12 +11,9 @@ public class Card : MonoBehaviour
     public int manaCost;//hepsinde var
     public int hpGain;
     public int attackPoint;
-    public int manaGain;
-    public bool stunCard;
-    public int stunTurn;
-    public bool absorbSkill;
     public EffectSO effect;
     public int slot;
+    private GameObject target;
     
     public void attackPlayer()
     {
@@ -26,6 +23,7 @@ public class Card : MonoBehaviour
 
     public void CastSkill(GameObject enemy)
     {
+        target = enemy;
         enemy.GetComponent<Animator>().SetTrigger("TakeHit");
 
         switch (cardType)
@@ -60,6 +58,6 @@ public class Card : MonoBehaviour
 
         GameManager.current.playerMana -= manaCost;
 
-        GameEvents.current.DeadEnter(enemy.GetComponent<EnemyScript>().id, enemy.GetComponent<EnemyScript>().hp);
+        GameEvents.current.DeadEnter(enemy.GetComponent<EnemyScript>().id, enemy.GetComponent<EnemyScript>().hp,target);
     }
 }

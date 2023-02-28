@@ -8,6 +8,7 @@ using DG.Tweening;
 
 public class GameManager : MonoBehaviour
 {
+    public CharacterDataSO characterDataSO;
     public static GameManager current;
     public PanelAnimation UIAnim;
     public bool endGame;
