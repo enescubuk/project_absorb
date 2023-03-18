@@ -9,9 +9,9 @@ using System;
 public class baseSelectController : MonoBehaviour
 {
     public TextMeshProUGUI roomNameText;
-    public TextMeshProUGUI roomDescriptionText;
+    public GameObject roomDescriptionText;
     public GameObject textParents;
-    public Image roomSprite;
+    public GameObject roomSprite;
     private GameObject targetRoom;
     public new Camera camera;
     private Vector3 lastCameraPos;
@@ -20,6 +20,7 @@ public class baseSelectController : MonoBehaviour
     public Transform close_button;
     private bool isRoomOpen = false;
 
+    [SerializeField] TrainerDialog td;
 
     [Header("Rooms")]
     public GameObject CardTrainerRoom;
@@ -31,7 +32,7 @@ public class baseSelectController : MonoBehaviour
     {
         lastCameraPos = camera.transform.position;
         lastCameraSize = camera.orthographicSize;
-        firstPosSprite = roomSprite.gameObject.transform.position;
+//        firstPosSprite = roomSprite.gameObject.transform.position;
         firstPosTexts = textParents.transform.position;
     }
     
@@ -41,6 +42,22 @@ public class baseSelectController : MonoBehaviour
         
     }
 
+    public void newClickRoom(roomSO roomSO)
+    {
+        if (isRoomOpen == false)
+        {
+            camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y,lastCameraPos.z),1);
+            DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 100, 1);
+            td.gameObject.SetActive(true);
+            td.FirstTrainerDialog();
+            Invoke("inMoveBoxs",0.3f);
+        }
+        else
+        {
+            goOut();
+            openRoom().SetActive(true);
+        }
+    }
     public void clickRoom(GameObject room,roomSO roomSO)
     {
         if (isRoomOpen == false)
@@ -84,18 +101,19 @@ public class baseSelectController : MonoBehaviour
     void setValues(GameObject room,roomSO roomSO)
     {
         roomNameText.text = roomSO.roomName;
-        roomDescriptionText.text = roomSO.roomDescription;
-        roomSprite.sprite = roomSO.roomSprite;
+       // roomDescriptionText = roomSO.roomDescription;
+        roomSprite = roomSO.roomSprite;
     }
     void inMoveBoxs()
     {
         isRoomOpen = true;
+        
         goIn();
     }
     void goIn()
     {
-        roomSprite.transform.DOMoveX(firstPosSprite.x + 19.5f ,1f);
-        textParents.transform.DOMoveY(firstPosTexts.y + 8.05f ,1f);
+       // roomSprite.transform.DOMoveX(firstPosSprite.x + 19.5f ,1f);
+       // roomDescriptionText.transform.DOMoveY(firstPosTexts.y + 8.05f ,1f);
         close_button.DOMoveY(close_button.position.y + 32.5f,1);
     }
     public void outMoveBoxs()
@@ -113,8 +131,9 @@ public class baseSelectController : MonoBehaviour
 
     void goOut()
     {
-        roomSprite.transform.DOMoveX(firstPosSprite.x,1f);
-        textParents.transform.DOMoveY(firstPosTexts.y,1f);
+        td.Close();
+       // roomSprite.transform.DOMoveX(firstPosSprite.x,1f);
+       // roomDescriptionText.transform.DOMoveY(firstPosTexts.y,1f);
         
         
     }

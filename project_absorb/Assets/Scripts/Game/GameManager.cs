@@ -92,8 +92,6 @@ public class GameManager : MonoBehaviour
     }
     void Start()
     {
-        
-
         //Get 3 Card From Start
     GameObject a = Instantiate(cards[Random.Range(0, cards.Count)], GameObject.Find("Card").transform);
     DrawCard(a);

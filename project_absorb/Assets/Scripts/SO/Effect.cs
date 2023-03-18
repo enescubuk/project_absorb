@@ -24,7 +24,7 @@ public class Effect : MonoBehaviour
     public void EffectEnemy()
     {
         
-        if (effectSO.currentDamage < 1)
+        if (duration < 1)
         {
             Destroy(this);
         }
