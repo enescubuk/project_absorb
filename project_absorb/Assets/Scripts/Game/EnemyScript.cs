@@ -10,6 +10,7 @@ public class EnemyScript : MonoBehaviour
 
     [Header("Enemy Stats")]
     public int hp;
+    [HideInInspector]public int maxHp;
 
     public int cardType;
 
@@ -18,10 +19,12 @@ public class EnemyScript : MonoBehaviour
     public int turnNumber;
 
     public int currentEffectDamage;
+    
 
     GameManager gameManager => GameManager.current;
     void Start()
     {
+        maxHp = hp;
         gameManager.enemies.Add(gameObject);
 
         turnNumber = gameManager.enemies.IndexOf(gameObject);
@@ -78,7 +81,7 @@ public class EnemyScript : MonoBehaviour
         if (GetComponent<Effect>() == true)
         {
             GetComponent<Effect>().EffectEnemy();
-            GameEvents.current.DeadEnter(id, hp);
+            GameEvents.current.DeadEnter(id, hp, gameObject);
             Debug.Log(55);
         }
         GetComponent<Animator>().SetTrigger("Attack");

@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7fafeb56ddff9940a06aae2efe61ea4, type: 3}
-  m_Name: CharacterData
+  m_Script: {fileID: 11500000, guid: 4ae5076c9c553c94c8b3f1b72702b88f, type: 3}
+  m_Name: ManaCard
   m_EditorClassIdentifier: 
-  level: 1
-  money: 9
-  health: 100
-  xp: 88
+  cardName: Mana
+  cardMana: 0
+  cardID: 0
+  cardType: 0
+  cardSprite: {fileID: 0}
+  cardPrefab: {fileID: 0}
+  cardCostOfSale: 0
