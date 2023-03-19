@@ -205,16 +205,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardID: 7
-  cardType: 3
+  cardType: 9
   manaCost: 0
   hpGain: 0
   attackPoint: 3
-  manaGain: 0
-  stunCard: 1
-  stunTurn: 0
-  absorbSkill: 0
   effect: {fileID: 11400000, guid: 0acf136154407dc489ba6afdf0bb80a7, type: 2}
   slot: 0
+  CammonCardValue: 5
 --- !u!114 &-3315800025616763890
 MonoBehaviour:
   m_ObjectHideFlags: 0
