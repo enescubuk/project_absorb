@@ -1891,14 +1891,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomNameText: {fileID: 5651459214578131406}
-  roomDescriptionText: {fileID: 5651459215288680304}
+  roomDescriptionText: {fileID: 0}
   textParents: {fileID: 5651459216128436143}
-  roomSprite: {fileID: 5651459216050228162}
+  roomSprite: {fileID: 0}
   camera: {fileID: 0}
   close_button: {fileID: 5651459216501047854}
+  td: {fileID: 0}
   CardTrainerRoom: {fileID: 8147150423639768825}
   RecruiterRoom: {fileID: 1994436434}
   GeneralRoom: {fileID: 0}
+  Hospital: {fileID: 0}
 --- !u!1 &5651459215288680310
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,16 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a7fafeb56ddff9940a06aae2efe61ea4, type: 3}
-  m_Name: CharacterData
+  m_Script: {fileID: 11500000, guid: a91e9a17ee71a844c91b6a94b82742c2, type: 3}
+  m_Name: HospitalRoom
   m_EditorClassIdentifier: 
-  level: 1
-<<<<<<< Updated upstream
-  money: 98340
-  health: 100
-=======
-  money: 729
-  health: -37
-  maxHealth: 40
-  xp: 168
->>>>>>> Stashed changes
+  roomName: Hospital
+  roomDescription: 31
+  roomSprite: {fileID: 0}
+  roomPrefab: {fileID: 0}

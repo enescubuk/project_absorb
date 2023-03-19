@@ -23,7 +23,7 @@ public class BossEndSelecter : MonoBehaviour
     public void BaseButton()
     {
 
-        SceneManager.LoadScene("Base");
+        SceneManager.LoadScene(0);
 
     }
 }
