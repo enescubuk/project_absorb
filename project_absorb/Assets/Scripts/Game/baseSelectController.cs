@@ -26,6 +26,7 @@ public class baseSelectController : MonoBehaviour
     public GameObject CardTrainerRoom;
     public GameObject RecruiterRoom;
     public GameObject GeneralRoom;
+    public GameObject Hospital;
 
 
     void Awake()
@@ -48,7 +49,6 @@ public class baseSelectController : MonoBehaviour
         {
             camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y,lastCameraPos.z),1);
             DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 100, 1);
-            td.gameObject.SetActive(true);
             td.FirstTrainerDialog();
             Invoke("inMoveBoxs",0.3f);
         }
@@ -63,6 +63,7 @@ public class baseSelectController : MonoBehaviour
         if (isRoomOpen == false)
         {
             targetRoom = room;
+            Debug.Log(targetRoom.name);
             camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y,lastCameraPos.z),1);
             DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 100, 1);
             Invoke("inMoveBoxs",0.3f);
@@ -84,10 +85,13 @@ public class baseSelectController : MonoBehaviour
                 clickingRoom = CardTrainerRoom;
                     break;
             case "General":
-                //clickingRoom = CardTrainerRoom;
+                clickingRoom = GeneralRoom;
                     break;
             case "Recruiter":
                 clickingRoom = RecruiterRoom;
+                    break;
+            case "Hospital":
+                clickingRoom = Hospital;
                     break;
         }
         return clickingRoom;

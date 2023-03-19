@@ -68,6 +68,9 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
+
+        playerHp = characterDataSO.Health;
+
         List<int> selectedCards = CardDeckScript.CardDeck;
         //For Singelton
         if (current != null && current != this)
@@ -106,6 +109,9 @@ public class GameManager : MonoBehaviour
 
     private void FixedUpdate()
     {
+    
+        
+
         if (canWalk == true)
         {
             playerAnim.SetBool("Run",true);
@@ -132,13 +138,15 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-                NextButton.SetActive(false);
+            NextButton.SetActive(false);
         }
 
     }
 
     void HealthAndManaSystem()
     {
+
+        characterDataSO.Health = playerHp;
         //Max Hp
         if (playerHp > playerMaxHp)
         {
@@ -178,6 +186,10 @@ public class GameManager : MonoBehaviour
         //Die
         if (playerHp <= 0)
         {
+            if (characterDataSO.MaxHealth - 10 >= 40)
+            {
+                characterDataSO.MaxHealth -= 10;
+            }
      //   SceneManager.LoadScene("finish");
         }
 
@@ -188,10 +200,14 @@ public class GameManager : MonoBehaviour
     }
     public void CardByTurn()
     {
+        for (int i = 0; i < 2; i++)
+        {
         GameObject a = Instantiate(cards[Random.Range(0, cards.Count)] , GameObject.Find("Card").transform);
         a.transform.localScale = new Vector3(1,1,1);
         DrawCard(a);
         playerCards.Add(a);
+        }
+        
     }
 
     public void DrawCard(GameObject card)
