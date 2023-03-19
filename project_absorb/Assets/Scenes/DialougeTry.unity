@@ -2404,7 +2404,7 @@ MonoBehaviour:
   currentHPText: {fileID: 631076262}
   healPrice: 100
   restorePrice: 1000
-  characterData: {fileID: 11400000, guid: 86511d382e2117e4490cd58fdeb7c7b1, type: 2}
+  characterData: {fileID: 11400000, guid: a5f8ad230042eae4995ab2053b4fa8ee, type: 2}
 --- !u!114 &1109195028
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4696,7 +4696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73f07c9cd9a8dd42b13b3678f837ee5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterData: {fileID: 11400000, guid: 86511d382e2117e4490cd58fdeb7c7b1, type: 2}
+  characterData: {fileID: 11400000, guid: a5f8ad230042eae4995ab2053b4fa8ee, type: 2}
   goldText: {fileID: 1441422325}
   hpText: {fileID: 877168293}
 --- !u!4 &3501811616734006060
@@ -5719,6 +5719,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1994436436, guid: 117ed58b7181ae248be07537a0b4a72a, type: 3}
+      propertyPath: characterData
+      value: 
+      objectReference: {fileID: 11400000, guid: a5f8ad230042eae4995ab2053b4fa8ee, type: 2}
     - target: {fileID: 109647280549378853, guid: 117ed58b7181ae248be07537a0b4a72a, type: 3}
       propertyPath: cardDeck
       value: 
