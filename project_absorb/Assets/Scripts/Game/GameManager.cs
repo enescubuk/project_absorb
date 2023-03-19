@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
     public Text hpText;
     public Image mana => GameObject.Find("Mana").GetComponent<Image>();
     public Sprite[] manaPots;
+    public int blockValue;
 
 
     [Header("Enemies")]
