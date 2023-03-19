@@ -21,20 +21,9 @@ public class Card : MonoBehaviour
     
     public void attackPlayer()
     {
-        if (GameManager.current.blockValue <= attackPoint)
-        {
-            GameManager.current.playerHp -= (attackPoint - GameManager.current.blockValue);
-        }
-        else
-        {
-            GameManager.current.blockValue = (GameManager.current.blockValue - attackPoint);
-        }
-        
-        //if (Mathf.Min(attackPoint,GameManager.current.blockValue) == GameManager.current.blockValue)
-        //{
-        //    GameManager.current.playerHp -= attackPoint + GameManager.current.blockValue;
-        //    Debug.Log("Attack Value : " + (attackPoint + GameManager.current.blockValue));
-        //}
+        int damage = Mathf.Max(attackPoint - GameManager.current.blockValue, 0);
+        GameManager.current.blockValue -= Mathf.Min(GameManager.current.blockValue, attackPoint);
+        GameManager.current.playerHp -= damage;
     }
 
     public void CastSkill(GameObject enemy)
