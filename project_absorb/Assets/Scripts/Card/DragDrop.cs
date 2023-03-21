@@ -57,20 +57,30 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
             {
                 transform.DOMove(firstPleace, 0.2f);
                 transform.DOScale(new Vector2(1f, 1f), 0.2f).SetEase(Ease.InCubic);
-
                 canvasGroup.alpha = 1f;
-
                 canvasGroup.blocksRaycasts = true;
+                animFalse();
+
+
             }
         
         }
         
     }
-
+    void animFalse()
+    {
+        for (int i = 0; i < GameManager.current.enemies.Count; i++)
+        {
+            GameManager.current.enemies[i].GetComponent<Animator>().SetBool("usedCard",false);
+        }
+        GameManager.current.playerAnim.SetBool("canUsedCard",false);
+    }
     public void OnDrag(PointerEventData eventData)
     {
+        
         if (onTarget == false)
         {
+            whichCard();
             Vector2 pos;
             RectTransformUtility.ScreenPointToLocalPointInRectangle(canvas.transform as RectTransform, Input.mousePosition, canvas.worldCamera, out pos);
             transform.position = canvas.transform.TransformPoint(pos);
@@ -102,6 +112,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
 
     void IPointerExitHandler.OnPointerExit(PointerEventData eventData)
     {
+        
         if (isDrag == false)
         {
             transform.DOScale(new Vector2(1f, 1f), 0.2f).SetEase(Ease.InCubic);
@@ -109,5 +120,21 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
         }
         
         //transform.localScale = new Vector2(1f, 1f);
+    }
+
+    void whichCard()
+    {
+        switch (GetComponent<Card>().cardType)
+        {
+            case Card.CardType.Block:
+                GameManager.current.playerAnim.SetBool("canUsedCard",true);
+                    break;
+            case Card.CardType.Attack:
+                for (int i = 0; i < GameManager.current.enemies.Count; i++)
+                {
+                    GameManager.current.enemies[i].GetComponent<Animator>().SetBool("usedCard",true);
+                }
+                    break;
+        }
     }
 }
