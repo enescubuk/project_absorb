@@ -10,7 +10,7 @@ public class Card : MonoBehaviour
     
     
     public int cardID;
-    public CardType cardType;//hepsinde var
+    public CardType cardType;
     public int manaCost;//hepsinde var
     public int hpGain;
     public int attackPoint;
@@ -21,34 +21,23 @@ public class Card : MonoBehaviour
     
     public void attackPlayer()
     {
-        if (GameManager.current.blockValue <= attackPoint)
-        {
-            GameManager.current.playerHp -= (attackPoint - GameManager.current.blockValue);
-        }
-        else
-        {
-            GameManager.current.blockValue = (GameManager.current.blockValue - attackPoint);
-        }
-        
-        //if (Mathf.Min(attackPoint,GameManager.current.blockValue) == GameManager.current.blockValue)
-        //{
-        //    GameManager.current.playerHp -= attackPoint + GameManager.current.blockValue;
-        //    Debug.Log("Attack Value : " + (attackPoint + GameManager.current.blockValue));
-        //}
+        int damage = Mathf.Max(attackPoint - GameManager.current.blockValue, 0);
+        GameManager.current.blockValue -= Mathf.Min(GameManager.current.blockValue, attackPoint);
+        GameManager.current.playerHp -= damage;
     }
 
     public void CastSkill(GameObject enemy)
     {
         target = enemy;
-        enemy.GetComponent<Animator>().SetTrigger("TakeHit");
-
         switch (cardType)   
         {
             case CardType.Attack:// Attack Skill
+                enemyTakeHit(enemy);
                 enemy.GetComponent<EnemyScript>().hp -= attackPoint;
                 break;
 
             case CardType.Bleed: // Bleed Card
+                enemyTakeHit(enemy);
                 effect.Effect(enemy);
                 enemy.GetComponent<EnemyScript>().hp -= attackPoint;
                 break;
@@ -59,7 +48,13 @@ public class Card : MonoBehaviour
         }
 
         GameManager.current.playerMana -= manaCost;
+        
+    }
 
+    private void enemyTakeHit(GameObject enemy)
+    {
+
+        enemy.GetComponent<Animator>().SetTrigger("TakeHit");
         GameEvents.current.DeadEnter(enemy.GetComponent<EnemyScript>().id, enemy.GetComponent<EnemyScript>().hp,target);
     }
 }
