@@ -11,6 +11,8 @@ public class NewCardGeneretor : MonoBehaviour
     public GameObject parent;
     public static NewCardGeneretor current;
     public int a;
+
+    [SerializeField] int turnNumber;
     private void Awake()
     {
         //For Singelton
@@ -27,7 +29,7 @@ public class NewCardGeneretor : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.current.newCardRoom && a < 2 && GameManager.current.enemies.Count == 0 && GameManager.current.isBossFight == false)
+        if (GameManager.current.newCardRoom && a < turnNumber && GameManager.current.enemies.Count == 0 && GameManager.current.isBossFight == false)
         {
             
             newCardPanel.SetActive(true);

@@ -205,10 +205,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardID: 7
-  cardType: 9
+  cardType: 1
   manaCost: 0
   hpGain: 0
-  attackPoint: 3
+  attackPoint: 100
   effect: {fileID: 11400000, guid: 0acf136154407dc489ba6afdf0bb80a7, type: 2}
   slot: 0
   CammonCardValue: 5

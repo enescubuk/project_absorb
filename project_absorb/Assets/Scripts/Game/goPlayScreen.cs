@@ -7,6 +7,6 @@ public class goPlayScreen : MonoBehaviour
 {
     public void playScreenButton()
     {
-        SceneManager.LoadScene("GameManager");
+        SceneManager.LoadScene(1);
     }
 }
