@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using TMPro;
 //using System;
 
 public class GameManager : MonoBehaviour
@@ -44,9 +45,11 @@ public class GameManager : MonoBehaviour
     public Slider healthBar;
 
     public Text hpText;
+    public TMP_Text ShieldText;
     public Image mana => GameObject.Find("Mana").GetComponent<Image>();
     public Sprite[] manaPots;
     public int blockValue;
+    public bool haveCT;
 
 
     [Header("Enemies")]

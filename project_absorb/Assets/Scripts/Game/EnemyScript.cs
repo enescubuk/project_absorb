@@ -86,7 +86,7 @@ public class EnemyScript : MonoBehaviour
         }
         GetComponent<Animator>().SetTrigger("Attack");
         gameManager.playerAnim.SetTrigger("Hit");
-        card.GetComponent<Card>().attackPlayer();
+        card.GetComponent<Card>().attackPlayer(this.gameObject);
         yield return new WaitForSeconds(1);
         gameManager.nextTurn = true;
         gameManager.turnNumber++;
