@@ -11,17 +11,13 @@ public class EnemyScript : MonoBehaviour
     [Header("Enemy Stats")]
     public int hp;
     [HideInInspector]public int maxHp;
-
     public int cardType;
-
     public int id;
-
     public int turnNumber;
-
     public int currentEffectDamage;
-    
-
     GameManager gameManager => GameManager.current;
+    public bool haveCT;
+    public bool haveStun;
     void Start()
     {
         maxHp = hp;
@@ -86,7 +82,14 @@ public class EnemyScript : MonoBehaviour
         }
         GetComponent<Animator>().SetTrigger("Attack");
         gameManager.playerAnim.SetTrigger("Hit");
-        card.GetComponent<Card>().attackPlayer(this.gameObject);
+        if (haveStun == false)
+        {
+            card.GetComponent<Card>().attackPlayer(this);
+        }
+        else
+        {
+            haveStun = false;
+        }
         yield return new WaitForSeconds(1);
         gameManager.nextTurn = true;
         gameManager.turnNumber++;

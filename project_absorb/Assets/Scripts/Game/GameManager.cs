@@ -49,7 +49,7 @@ public class GameManager : MonoBehaviour
     public Image mana => GameObject.Find("Mana").GetComponent<Image>();
     public Sprite[] manaPots;
     public int blockValue;
-    public bool haveCT;
+    
 
 
     [Header("Enemies")]

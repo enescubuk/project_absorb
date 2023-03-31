@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Swing
   m_EditorClassIdentifier: 
   cardName: Swing
+  cardDiscription: herkese 4 attack
   cardMana: 2
   cardID: 0
   cardType: 0

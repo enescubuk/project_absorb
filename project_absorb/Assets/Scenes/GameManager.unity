@@ -1373,8 +1373,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   newCardPanel: {fileID: 316805953}
   cardList:
-  - {fileID: 1029087984118213315, guid: 201c99365b01f40468a6b97f0241b674, type: 3}
-  - {fileID: 925112164681752354, guid: aa2603de7f13e6c4f843254988bd4d97, type: 3}
+  - {fileID: 9066665295950666772, guid: 6145683cdccf15640bde71b5d545b0bc, type: 3}
+  - {fileID: 9066665295950666772, guid: 6fedad9cc9b91a4419cf7ba38c3e3e8d, type: 3}
+  - {fileID: 9066665295950666772, guid: 7da76826fd20366498f15232e13ab5ee, type: 3}
+  - {fileID: 9066665295950666772, guid: d917aeebe3b39ab4a8764327f377527d, type: 3}
+  - {fileID: 9066665295950666772, guid: fd49674165ea2d545b9b23f098ee2085, type: 3}
+  - {fileID: 9066665295950666772, guid: 6ec1b5bef5dc9cf46ac06f98bbc73572, type: 3}
+  - {fileID: 9066665295950666772, guid: c92bb2809b8f25d44961f37c4d7389ca, type: 3}
+  - {fileID: 9066665295950666772, guid: 9933921431b4aba46b989c64bbc4f3ae, type: 3}
+  - {fileID: 9066665295950666772, guid: 5c0acdbb434bb324fa36c76c4f81151d, type: 3}
+  - {fileID: 9066665295950666772, guid: e83963e6df0e76c49a9d2b720cf12fbd, type: 3}
   spawnPoints:
   - {fileID: 251632950}
   - {fileID: 1917203779}
@@ -2183,7 +2191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86b4ede747bdc4047a85fb9ed89f230d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterDataSO: {fileID: 11400000, guid: 86511d382e2117e4490cd58fdeb7c7b1, type: 2}
+  characterDataSO: {fileID: 11400000, guid: a5f8ad230042eae4995ab2053b4fa8ee, type: 2}
   UIAnim: {fileID: 5696256541097433428}
   endGame: 0
   canWalk: 0
@@ -2199,7 +2207,9 @@ MonoBehaviour:
   nextTurn: 0
   stuned: 0
   cards:
-  - {fileID: 9066665295950666772, guid: c92bb2809b8f25d44961f37c4d7389ca, type: 3}
+  - {fileID: 9066665295950666772, guid: f1f812813a3ef3245ab92ee634aef20a, type: 3}
+  - {fileID: 9066665295950666772, guid: fd49674165ea2d545b9b23f098ee2085, type: 3}
+  - {fileID: 9066665295950666772, guid: 6fedad9cc9b91a4419cf7ba38c3e3e8d, type: 3}
   cardSlots:
   - {fileID: 4386990922915695863}
   - {fileID: 1847561452481025670}
@@ -2221,7 +2231,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e5c75a55959e57b40bf576cfd2d64f4a, type: 3}
   - {fileID: 21300000, guid: 32512291fa9b8c94a8d3de685e639f2e, type: 3}
   blockValue: 0
-  haveCT: 0
   enemies: []
   enemiesType:
   - {fileID: 4345983407171657850, guid: 84c439a8ab2e717439d934a85f44807f, type: 3}

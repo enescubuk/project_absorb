@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 2686534607796061358}
   - component: {fileID: 9091336121280491097}
   m_Layer: 0
-  m_Name: Block
+  m_Name: Stab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,13 +361,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardID: 2
-  cardType: 8
+  cardType: 1
   manaCost: 2
   hpGain: 0
   attackPoint: 5
   effect: {fileID: 0}
   slot: 0
-  CammonCardValue: 5
+  CammonCardValue: 0
 --- !u!114 &9091336121280491097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -380,4 +380,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7105807a61979499b402b9031ad2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardValuesSO: {fileID: 11400000, guid: ea84fb6f2a36d3142b8e06024dab1db9, type: 2}
+  cardValuesSO: {fileID: 11400000, guid: 9a52400174ea70a45b0ade127f744af7, type: 2}

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Prepare
   m_EditorClassIdentifier: 
   cardName: Prepare
+  cardDiscription: 10 blok + Ct
   cardMana: 2
   cardID: 0
   cardType: 0

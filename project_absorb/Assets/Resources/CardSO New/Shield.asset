@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Shield
   m_EditorClassIdentifier: 
   cardName: Shield
+  cardDiscription: 10 block
   cardMana: 1
   cardID: 0
   cardType: 0

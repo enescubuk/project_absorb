@@ -9,14 +9,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1180df41cdb06a48aac414eccc43491, type: 3}
-  m_Name: Slash
+  m_Script: {fileID: 11500000, guid: 4ae5076c9c553c94c8b3f1b72702b88f, type: 3}
+  m_Name: Heavy Impact
   m_EditorClassIdentifier: 
-  cardName: Slash
-  cardMana: 1
+  cardName: Heavy Impact
+  cardDiscription: "T\xFCm kanamalara x2\r"
+  cardMana: 2
   cardID: 0
   cardType: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
   cardCostOfSale: 0
-  attackValue: 4

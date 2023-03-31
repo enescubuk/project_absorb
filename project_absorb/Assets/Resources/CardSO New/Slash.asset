@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Slash
   m_EditorClassIdentifier: 
   cardName: Slash
+  cardDiscription: 4 attack
   cardMana: 1
   cardID: 0
   cardType: 0
