@@ -12,4 +12,5 @@ public class CardValuesSO : ScriptableObject
     public Sprite cardSprite;
     public GameObject cardPrefab;
     public int cardCostOfSale;
+    public Sprite cardEffectIcon;
 }
