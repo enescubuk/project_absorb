@@ -12,11 +12,13 @@ public class GameManager : MonoBehaviour
     public CharacterDataSO characterDataSO;
     public static GameManager current;
     public PanelAnimation UIAnim;
+    public GameObject storyEvent;
     public bool endGame;
     public bool canWalk;
     public int bossRoomNumber;
     public bool isBossFight;
     public bool newCardRoom;
+    public bool storyEventTurn;
     public int wave;
     public bool isWalk;
     bool isEmptySlot;
