@@ -5,10 +5,11 @@ using UnityEngine;
 public class RoomScript : MonoBehaviour
 {
     public int totalWave;
-    public int waveCount;
-    
+    public int cardWave;
+    public int eventWave;
+    public int eventPeriod;
     public static RoomScript current;
-    public int wavePeriod;
+    public int cardPeriod;
     private void Awake()
     {
         //For Singelton
@@ -26,7 +27,7 @@ public class RoomScript : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GameManager.current.wave == waveCount && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave)
+        if (GameManager.current.wave == cardWave && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave)
         {
             GameManager.current.newCardRoom = true;
             
@@ -35,15 +36,32 @@ public class RoomScript : MonoBehaviour
         {
             GameManager.current.newCardRoom = false;
         }
+
+        if (GameManager.current.wave == eventWave && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave)
+        {
+            GameManager.current.storyEventTurn = true;
+            
+        }
+        else
+        {
+            GameManager.current.storyEventTurn = false;
+        }
     }
 
 
     public void NewWave(int a)
     {
         Debug.Log(99);
-        waveCount += wavePeriod;
+        if (GameManager.current.newCardRoom == true)
+        {
+            cardWave += cardPeriod;
+        }
+        if (GameManager.current.storyEventTurn == true)
+        {
+            eventWave+=eventPeriod;   
+        }
+        
         GameEvents.current.StartCoroutine("SpawnDelay");
-
     }
     
 }

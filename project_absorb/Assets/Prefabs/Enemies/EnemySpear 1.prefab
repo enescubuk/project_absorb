@@ -244,7 +244,8 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3213214189225704851, guid: e6977f3f936c6844585c0ac33d83f289, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e6977f3f936c6844585c0ac33d83f289, type: 3}
 --- !u!224 &6983028464655626339 stripped
 RectTransform:

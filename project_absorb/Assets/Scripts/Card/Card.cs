@@ -54,7 +54,7 @@ public class Card : MonoBehaviour
     private void enemyTakeHit(GameObject enemy)
     {
 
-        enemy.GetComponent<Animator>().SetTrigger("TakeHit");
+                enemy.GetComponent<Animator>().SetTrigger("TakeHit");
         GameEvents.current.DeadEnter(enemy.GetComponent<EnemyScript>().id, enemy.GetComponent<EnemyScript>().hp,target);
     }
 }
