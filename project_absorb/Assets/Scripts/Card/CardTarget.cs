@@ -60,7 +60,7 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
     public void cardEffect(GameObject which)
     {
 
-        if (gameManager.playerMana - which.GetComponent<Card>().manaCost >= 0)
+        if (gameManager.playerMana - which.GetComponent<ItemSO>().cardValuesSO.cardMana >= 0)
         {
             gameManager.playerAnim.SetTrigger("Attack");
 

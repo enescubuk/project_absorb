@@ -71,7 +71,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
     {
         for (int i = 0; i < GameManager.current.enemies.Count; i++)
         {
-            GameManager.current.enemies[i].GetComponent<Animator>().SetBool("usedCard",false);
+            GameManager.current.enemies[i].transform.Find("Image").GetComponent<Animator>().SetBool("usedCard",false);
         }
         GameManager.current.playerAnim.SetBool("canUsedCard",false);
     }
@@ -132,7 +132,8 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
             case Card.CardType.Attack:
                 for (int i = 0; i < GameManager.current.enemies.Count; i++)
                 {
-                    GameManager.current.enemies[i].GetComponent<Animator>().SetBool("usedCard",true);
+                    GameManager.current.enemies[i].transform.Find("Image").GetComponent<Animator>().SetBool("usedCard",true);
+                    Debug.Log(GameManager.current.enemies[i].transform.Find("Image").GetComponent<Animator>().gameObject.name);
                 }
                     break;
         }
