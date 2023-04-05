@@ -10,6 +10,8 @@ public class RoomScript : MonoBehaviour
     public int eventPeriod;
     public static RoomScript current;
     public int cardPeriod;
+
+    bool isCard , isWave;
     private void Awake()
     {
         //For Singelton
@@ -31,13 +33,14 @@ public class RoomScript : MonoBehaviour
         {
             GameManager.current.newCardRoom = true;
             
+            
         }
         else
         {
             GameManager.current.newCardRoom = false;
         }
 
-        if (GameManager.current.wave == eventWave && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave)
+        if (GameManager.current.wave == eventWave && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave && isCard == true)
         {
             GameManager.current.storyEventTurn = true;
             
@@ -47,21 +50,34 @@ public class RoomScript : MonoBehaviour
             GameManager.current.storyEventTurn = false;
         }
     }
-
-
-    public void NewWave(int a)
+    public void NewWaveCard()
     {
-        Debug.Log(99);
         if (GameManager.current.newCardRoom == true)
         {
             cardWave += cardPeriod;
+            isCard = true;
+            NewWave();
         }
+    }
+
+    public void NewWaveEvent()
+    {
         if (GameManager.current.storyEventTurn == true)
         {
-            eventWave+=eventPeriod;   
+            eventWave+=eventPeriod;
+            isWave = true;
+            NewWave();
         }
-        
-        GameEvents.current.StartCoroutine("SpawnDelay");
+    }
+
+    public void NewWave()
+    {
+        if (isWave == true && isCard == true)
+        {
+            GameEvents.current.StartCoroutine("SpawnDelay");
+            isWave = false;
+            isCard = false;
+        }
     }
     
 }
