@@ -2691,7 +2691,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalWave: 0
-  cardWave: 2
+  cardWave: 1
   eventWave: 1
   eventPeriod: 1
   cardPeriod: 1

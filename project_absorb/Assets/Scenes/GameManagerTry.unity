@@ -2211,7 +2211,9 @@ MonoBehaviour:
   nextTurn: 0
   stuned: 0
   cards:
-  - {fileID: 1029087984118213315, guid: 201c99365b01f40468a6b97f0241b674, type: 3}
+  - {fileID: 9066665295950666772, guid: fd49674165ea2d545b9b23f098ee2085, type: 3}
+  - {fileID: 9066665295950666772, guid: fd49674165ea2d545b9b23f098ee2085, type: 3}
+  - {fileID: 9066665295950666772, guid: fd49674165ea2d545b9b23f098ee2085, type: 3}
   cardSlots:
   - {fileID: 4386990922915695863}
   - {fileID: 1847561452481025670}
@@ -2690,7 +2692,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalWave: 0
-  cardWave: 3
+  cardWave: 1
   eventWave: 1
   eventPeriod: 1
   cardPeriod: 1
@@ -3057,7 +3059,7 @@ MonoBehaviour:
   - {fileID: 321388526}
   - {fileID: 1538993672}
   - {fileID: 1543610901}
-  roomPower: 4
+  roomPower: 3
   roomNumber: 3
 --- !u!4 &1213960740
 Transform:

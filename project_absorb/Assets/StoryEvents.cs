@@ -72,7 +72,7 @@ public class FunctionA : IFunction
     public void OptionOne()
     {
         GameManager.current.playerHp += 10;
-        RoomScript.current.NewWave(0);
+        RoomScript.current.NewWaveEvent();
         GameManager.current.storyEvent.SetActive(false);
         GameManager.current.storyEventTurn = false;
     }
@@ -80,7 +80,7 @@ public class FunctionA : IFunction
     public void OptionTwo()
     {
         Debug.Log(optionTwoText);
-        RoomScript.current.NewWave(0);
+        RoomScript.current.NewWaveEvent();
         GameManager.current.storyEvent.SetActive(false);
         GameManager.current.storyEventTurn = false;
     }

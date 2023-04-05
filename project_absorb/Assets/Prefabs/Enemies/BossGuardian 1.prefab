@@ -106,13 +106,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e31e168e2d871f844a10a45f6eafeb93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 925112164681752354, guid: aa2603de7f13e6c4f843254988bd4d97, type: 3}
+  card: {fileID: 9066665295950666772, guid: 6145683cdccf15640bde71b5d545b0bc, type: 3}
   hp: 50
   maxHp: 0
   cardType: 4
   id: 1
   turnNumber: 0
   currentEffectDamage: 0
+  haveCT: 0
+  haveStun: 0
 --- !u!95 &2587611385218154666
 Animator:
   serializedVersion: 4
