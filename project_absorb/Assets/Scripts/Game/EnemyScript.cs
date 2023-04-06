@@ -32,6 +32,7 @@ public class EnemyScript : MonoBehaviour
         
     }
 
+
     public void ThisEnemyTurn(int id)
     {
         if (id == this.turnNumber)

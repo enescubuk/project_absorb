@@ -2210,9 +2210,7 @@ MonoBehaviour:
   nextTurn: 0
   stuned: 0
   cards:
-  - {fileID: 9066665295950666772, guid: e83963e6df0e76c49a9d2b720cf12fbd, type: 3}
-  - {fileID: 9066665295950666772, guid: 6fedad9cc9b91a4419cf7ba38c3e3e8d, type: 3}
-  - {fileID: 9066665295950666772, guid: d917aeebe3b39ab4a8764327f377527d, type: 3}
+  - {fileID: 9066665295950666772, guid: 7da76826fd20366498f15232e13ab5ee, type: 3}
   cardSlots:
   - {fileID: 4386990922915695863}
   - {fileID: 1847561452481025670}
@@ -2234,6 +2232,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e5c75a55959e57b40bf576cfd2d64f4a, type: 3}
   - {fileID: 21300000, guid: 32512291fa9b8c94a8d3de685e639f2e, type: 3}
   blockValue: 0
+  Ct: 0
   enemies: []
   enemiesType:
   - {fileID: 4345983407171657850, guid: 84c439a8ab2e717439d934a85f44807f, type: 3}

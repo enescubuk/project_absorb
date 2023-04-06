@@ -4,6 +4,8 @@ using UnityEngine;
 [CreateAssetMenu(menuName ="Card/Default Card Values")]
 public class CardValuesSO : ScriptableObject
 {
+    public enum Target { toEnemy, toMe};
+    public Target target;
     public string cardName;
     [TextArea]public string cardDiscription;
     public int cardMana;

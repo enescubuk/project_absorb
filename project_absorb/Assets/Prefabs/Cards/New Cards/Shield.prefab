@@ -361,7 +361,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardID: 2
-  cardType: 8
+  cardType: 13
   manaCost: 2
   hpGain: 0
   attackPoint: 5
