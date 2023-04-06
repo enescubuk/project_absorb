@@ -15,8 +15,9 @@ MonoBehaviour:
   cardName: Reap
   cardDiscription: "mevcut kanaman\u0131n 2 kat\u0131 hasar"
   cardMana: 2
-  cardID: 0
+  cardID: 7
   cardType: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
   cardCostOfSale: 0
+  cardEffectIcon: {fileID: 0}
