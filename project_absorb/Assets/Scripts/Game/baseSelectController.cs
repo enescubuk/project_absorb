@@ -49,7 +49,7 @@ public class baseSelectController : MonoBehaviour
         {
             camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y,lastCameraPos.z),1);
             DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 100, 1);
-            td.FirstTrainerDialog();
+            //td.FirstTrainerDialog();
             Invoke("inMoveBoxs",0.3f);
         }
         else
@@ -135,7 +135,7 @@ public class baseSelectController : MonoBehaviour
 
     void goOut()
     {
-        td.Close();
+        //td.Close();
        // roomSprite.transform.DOMoveX(firstPosSprite.x,1f);
        // roomDescriptionText.transform.DOMoveY(firstPosTexts.y,1f);
         

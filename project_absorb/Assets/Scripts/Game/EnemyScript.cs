@@ -18,6 +18,7 @@ public class EnemyScript : MonoBehaviour
     GameManager gameManager => GameManager.current;
     public bool haveCT;
     public bool haveStun;
+    public bool haveCutCard;
     void Start()
     {
         maxHp = hp;
@@ -79,7 +80,6 @@ public class EnemyScript : MonoBehaviour
         {
             GetComponent<Effect>().EffectEnemy();
             GameEvents.current.DeadEnter(id, hp, gameObject);
-            Debug.Log(55);
         }
         GetComponent<Animator>().SetTrigger("Attack");
         gameManager.playerAnim.SetTrigger("Hit");

@@ -26,7 +26,8 @@ public class Card : MonoBehaviour
             int damage = Mathf.Max(attackPoint - GameManager.current.blockValue, 0);
             GameManager.current.blockValue -= Mathf.Min(GameManager.current.blockValue, attackPoint);
             GameManager.current.playerHp -= damage;
-            //GameManager.current.ShieldText.text = GameManager.current.blockValue.ToString();
+            GameManager.current.ShieldText.text = GameManager.current.blockValue.ToString();
+            
         }
         else
         {
@@ -116,20 +117,40 @@ public class Card : MonoBehaviour
                 enemyTakeHit(enemy,GameManager.current.blockValue);
                     break;
             
+            case CardType.Cut:
+                enemyScript.haveCutCard = true;
+                    break;
+            
             case CardType.Consume:
                 enemyTakeHit(enemy,GameManager.current.playerMana * CammonCardValue);
                     break;
             
             case CardType.Austerity:
-                
+                //elindeki kart sayısı kadar hasar ver
                     break;
                 
+            case CardType.Crush:
+                //null
+                    break;
 
             
         }
 
         GameManager.current.playerMana -= GetComponent<ItemSO>().cardValuesSO.cardMana;
-        
+        if (GetComponent<ItemSO>().cardValuesSO.target == CardValuesSO.Target.toEnemy)
+        {
+            if (enemyScript.haveCutCard == true)
+            {
+                if (enemy.GetComponent<Effect>() != null)
+                {
+                    enemy.GetComponent<Effect>().duration++;
+                }
+                else
+                {
+                    effect.Effect(enemy);
+                }
+            }
+        }
     }
 
     private void enemyTakeHit(GameObject enemy, int damage)

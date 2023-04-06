@@ -124,16 +124,15 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
 
     void whichCard()
     {
-        switch (GetComponent<Card>().cardType)
+        switch (GetComponent<ItemSO>().cardValuesSO.target)
         {
-            case Card.CardType.Block:
+            case CardValuesSO.Target.toMe:
                 GameManager.current.playerAnim.SetBool("canUsedCard",true);
                     break;
-            case Card.CardType.Slash:
+            case CardValuesSO.Target.toEnemy:
                 for (int i = 0; i < GameManager.current.enemies.Count; i++)
                 {
                     GameManager.current.enemies[i].transform.Find("Image").GetComponent<Animator>().SetBool("usedCard",true);
-                    Debug.Log(GameManager.current.enemies[i].transform.Find("Image").GetComponent<Animator>().gameObject.name);
                 }
                     break;
         }

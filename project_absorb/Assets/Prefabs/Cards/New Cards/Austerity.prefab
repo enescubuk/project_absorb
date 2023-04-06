@@ -252,7 +252,7 @@ GameObject:
   - component: {fileID: 2686534607796061358}
   - component: {fileID: 9091336121280491097}
   m_Layer: 0
-  m_Name: Piercing
+  m_Name: Austerity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -361,12 +361,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardID: 2
-  cardType: 16
+  cardType: 18
   hpGain: 0
   attackPoint: 5
   effect: {fileID: 11400000, guid: 3f14ae0a807e03a40abba0bd9ebbc972, type: 2}
   slot: 0
-  CammonCardValue: 10
+  CammonCardValue: 0
 --- !u!114 &9091336121280491097
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -379,4 +379,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f7105807a61979499b402b9031ad2f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardValuesSO: {fileID: 11400000, guid: 0179c1b64372d8548a65506a9b680bc9, type: 2}
+  cardValuesSO: {fileID: 11400000, guid: 40bccea2a152e0f40aaea7d667fb7c0d, type: 2}
