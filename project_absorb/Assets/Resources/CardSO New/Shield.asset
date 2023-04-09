@@ -12,11 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae5076c9c553c94c8b3f1b72702b88f, type: 3}
   m_Name: Shield
   m_EditorClassIdentifier: 
+  target: 1
   cardName: Shield
   cardDiscription: 10 block
   cardMana: 1
-  cardID: 0
+  cardID: 14
   cardType: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
   cardCostOfSale: 0
+  cardEffectIcon: {fileID: 0}

@@ -51,6 +51,7 @@ public class GameManager : MonoBehaviour
     public Image mana => GameObject.Find("Mana").GetComponent<Image>();
     public Sprite[] manaPots;
     public int blockValue;
+    public bool Ct;
     
 
 
@@ -214,7 +215,7 @@ public class GameManager : MonoBehaviour
         DrawCard(a);
         playerCards.Add(a);
         }
-        
+        //card spawn
     }
 
     public void DrawCard(GameObject card)
@@ -248,7 +249,6 @@ public class GameManager : MonoBehaviour
             {
                 CardByTurn();
             }
-            Debug.Log("Main Char Turn");
 
         }
         if (nextTurn == true)

@@ -15,8 +15,9 @@ MonoBehaviour:
   cardName: Piercing
   cardDiscription: Attack 10
   cardMana: 2
-  cardID: 0
+  cardID: 17
   cardType: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
   cardCostOfSale: 0
+  cardEffectIcon: {fileID: 0}

@@ -365,9 +365,9 @@ MonoBehaviour:
   manaCost: 2
   hpGain: 0
   attackPoint: 5
-  effect: {fileID: 0}
+  effect: {fileID: 11400000, guid: 3f14ae0a807e03a40abba0bd9ebbc972, type: 2}
   slot: 0
-  CammonCardValue: 0
+  CammonCardValue: 2
 --- !u!114 &9091336121280491097
 MonoBehaviour:
   m_ObjectHideFlags: 0

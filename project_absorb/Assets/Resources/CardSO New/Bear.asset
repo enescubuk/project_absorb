@@ -15,8 +15,9 @@ MonoBehaviour:
   cardName: Bear
   cardDiscription: Stun
   cardMana: 1
-  cardID: 0
+  cardID: 8
   cardType: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
   cardCostOfSale: 0
+  cardEffectIcon: {fileID: 0}

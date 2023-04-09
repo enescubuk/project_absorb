@@ -11,7 +11,6 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
     GameManager gameManager => GameManager.current;
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("psfdogkpsdokfgpdofskg");
         eventData.pointerDrag.gameObject.transform.DOScale(new Vector2(0.7f, 0.7f), 0.2f).SetEase(Ease.OutExpo);
         Sequence mySequence = DOTween.Sequence();
 
@@ -28,13 +27,11 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
 
         if (eventData.pointerDrag != null)
         {
-            Debug.Log(1111111111111);
             eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
         }
 
         if (cardUsed == true)
         {
-            Debug.Log(222222222222222222);
             eventData.pointerDrag.gameObject.GetComponent<DragDrop>().isEnd = true;
 
             gameManager.playerCards.Remove(eventData.pointerDrag.gameObject);

@@ -15,8 +15,9 @@ MonoBehaviour:
   cardName: Heavy Impact
   cardDiscription: "T\xFCm kanamalara x2\r"
   cardMana: 2
-  cardID: 0
+  cardID: 5
   cardType: 0
   cardSprite: {fileID: 0}
   cardPrefab: {fileID: 0}
   cardCostOfSale: 0
+  cardEffectIcon: {fileID: 0}
