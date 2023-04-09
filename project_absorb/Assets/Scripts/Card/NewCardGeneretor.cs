@@ -30,8 +30,7 @@ public class NewCardGeneretor : MonoBehaviour
     void FixedUpdate()
     {
         if (GameManager.current.newCardRoom && a < turnNumber && GameManager.current.enemies.Count == 0 && GameManager.current.isBossFight == false)
-        {
-            
+        {   
             newCardPanel.SetActive(true);
 
             for (int i = 0; i < spawnPoints.Length; i++)
@@ -44,8 +43,9 @@ public class NewCardGeneretor : MonoBehaviour
             }
             
         }
-
-
-        
+        if (GameManager.current.newCardRoom == false)
+        {
+            a = 0;
+        }
     }
 }
