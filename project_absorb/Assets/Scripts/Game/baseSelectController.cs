@@ -47,8 +47,8 @@ public class baseSelectController : MonoBehaviour
     {
         if (isRoomOpen == false)
         {
-            camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y,lastCameraPos.z),1);
-            DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 100, 1);
+            camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y-65,lastCameraPos.z),1);
+            DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 300, 1);
             td.FirstTrainerDialog();
             Invoke("inMoveBoxs",0.3f);
         }
@@ -64,8 +64,8 @@ public class baseSelectController : MonoBehaviour
         {
             targetRoom = room;
             Debug.Log(targetRoom.name);
-            camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y,lastCameraPos.z),1);
-            DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 100, 1);
+            camera.transform.DOMove(new Vector3(targetRoom.transform.position.x,targetRoom.transform.position.y-65,lastCameraPos.z),1);
+            DOTween.To(() => camera.orthographicSize, x => camera.orthographicSize = x, lastCameraSize - 300, 1);
             Invoke("inMoveBoxs",0.3f);
         }
         else
