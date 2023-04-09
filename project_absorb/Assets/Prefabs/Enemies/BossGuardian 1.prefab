@@ -54,7 +54,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4529875404751977033}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
@@ -143,7 +143,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 31
+  m_text: ' '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 514218d9bc51f9f49bf8d762f93ea6e0, type: 2}
   m_sharedMaterial: {fileID: -287637209413301830, guid: 514218d9bc51f9f49bf8d762f93ea6e0, type: 2}
@@ -226,6 +226,7 @@ GameObject:
   - component: {fileID: 9128490914483863073}
   - component: {fileID: 9128490914483863072}
   - component: {fileID: 2587611385218154666}
+  - component: {fileID: 7107369037519427367}
   m_Layer: 0
   m_Name: BossGuardian 1
   m_TagString: Untagged
@@ -348,6 +349,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &7107369037519427367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128490914483863085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f314858a17fd90d48b5523c5d6b18c2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bleedEffectCounter: {fileID: 7824281833107326073}
+  bleedEffectSprite: {fileID: 1413829726769661469}
 --- !u!1001 &5026820831626012933
 PrefabInstance:
   m_ObjectHideFlags: 0

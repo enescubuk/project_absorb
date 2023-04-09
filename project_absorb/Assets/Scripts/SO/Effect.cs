@@ -10,40 +10,48 @@ public class Effect : MonoBehaviour
     public EffectSO effectSO;
 
     public int duration;
-    public TMP_Text effectCounter;
-    public Image effectSprite;
+
+    private enemyEffectIndicator indicatorScript;
+    
     void Awake()
     {
         
     }
     void changeValues(string text, bool sprite)
     {
-        effectCounter.text = text;
-        effectSprite.enabled = sprite;
+        indicatorScript.bleedEffectCounter.text = text;
+        indicatorScript.bleedEffectSprite.enabled = sprite;
     }
 
     private void Start() 
     {
-        effectCounter = gameObject.transform.Find("EffectCounter").GetComponentInChildren<TMP_Text>();
-        effectSprite = gameObject.transform.Find("Effect").GetComponentInChildren<Image>();
+        indicatorScript = GetComponent<enemyEffectIndicator>();
         changeValues(duration.ToString(), true);
         if (GetComponent<Effect>() == this)
         {
             effectSO.currentDamage = 1;
         }
-        effectCounter.text = duration.ToString();
+        indicatorScript.bleedEffectCounter.text = duration.ToString();
     }
     public void EffectEnemy()
     {
         
         if (duration < 1)
         {
-            changeValues(" ",false);
             Destroy(this);
         }
+        Debug.Log("duration: " + duration);
         GetComponent<EnemyScript>().hp -= duration;
         duration--;
-        changeValues(duration.ToString(), true);
+        if (duration == 0)
+        {
+            changeValues(" ",false);
+        }
+        else
+        {
+            changeValues(duration.ToString(), true);
+        }
+        
     }
 
     public void EffectPlayer()
@@ -51,11 +59,15 @@ public class Effect : MonoBehaviour
         GameManager.current.playerHp -= effectSO.effectDamage;
         if (duration <= 0)
         {
-            changeValues(" ",false);
             Destroy(this);
         }
         duration--;
         changeValues(duration.ToString(), true);
     }
+    
 
+    void OnDestroy()
+    {
+        changeValues(" ",false);
+    }
 }
