@@ -28,7 +28,7 @@ public class TrainerDialog : MonoBehaviour
     {
         //dialogTexts.Add(new DialogData("/close/"));
 
-        DialogManager.Show(dialogTexts);
+        //DialogManager.Show(dialogTexts);
         
         dialogTexts.Clear();
 

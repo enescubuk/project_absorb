@@ -26,7 +26,7 @@ public class Card : MonoBehaviour
             int damage = Mathf.Max(attackPoint - GameManager.current.blockValue, 0);
             GameManager.current.blockValue -= Mathf.Min(GameManager.current.blockValue, attackPoint);
             GameManager.current.playerHp -= damage;
-            GameManager.current.ShieldText.text = GameManager.current.blockValue.ToString();
+            //GameManager.current.ShieldText.text = GameManager.current.blockValue.ToString();
             
         }
         else
