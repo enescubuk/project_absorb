@@ -19,6 +19,8 @@ public class EnemyScript : MonoBehaviour
     public bool haveCT;
     public bool haveStun;
     public bool haveCutCard;
+
+    public Image stunEffect;
     void Start()
     {
         maxHp = hp;
@@ -81,15 +83,17 @@ public class EnemyScript : MonoBehaviour
             GetComponent<Effect>().EffectEnemy();
             GameEvents.current.DeadEnter(id, hp, gameObject);
         }
-        GetComponent<Animator>().SetTrigger("Attack");
-        gameManager.playerAnim.SetTrigger("Hit");
+        
         if (haveStun == false)
         {
+            GetComponent<Animator>().SetTrigger("Attack");
+            gameManager.playerAnim.SetTrigger("Hit");
             card.GetComponent<Card>().attackPlayer(this);
         }
         else
         {
             haveStun = false;
+            stunEffect.enabled = false;
         }
         yield return new WaitForSeconds(1);
         gameManager.nextTurn = true;

@@ -63,7 +63,6 @@ public class Card : MonoBehaviour
             case CardType.Swing: //Swing
                 for (int i = 0; i < GameManager.current.enemies.Count; i++)
                 {
-                    
                     enemyTakeHit(GameManager.current.enemies[i],CammonCardValue);
                 }
                     break;
@@ -103,6 +102,7 @@ public class Card : MonoBehaviour
 
             case CardType.Bear: //Bear
                 enemyScript.haveStun = true;
+                enemyScript.stunEffect.enabled = true;
                     break;
 
             case CardType.Rose:
