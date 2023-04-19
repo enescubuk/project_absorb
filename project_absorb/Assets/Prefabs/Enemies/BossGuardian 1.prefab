@@ -35,8 +35,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.5374002, y: 41.4}
-  m_SizeDelta: {x: 59.4218, y: 63.7943}
+  m_AnchoredPosition: {x: -124.43, y: -335}
+  m_SizeDelta: {x: 248.86, y: 267.1686}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2434937986542519255
 CanvasRenderer:
@@ -405,7 +405,7 @@ MonoBehaviour:
   haveCT: 0
   haveStun: 0
   haveCutCard: 0
-  stunEffect: {fileID: 0}
+  stunEffect: {fileID: 5782954227782964665}
 --- !u!95 &2587611385218154666
 Animator:
   serializedVersion: 4

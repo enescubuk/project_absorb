@@ -249,6 +249,16 @@ public class GameManager : MonoBehaviour
             {
                 CardByTurn();
             }
+        Debug.Log("Main Char Turn");
+        
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Image stunImage = enemies[i].GetComponent<EnemyScript>().stunEffect;
+            if (stunImage.enabled == true)
+            {
+                stunImage.enabled = false;
+            }
+        }
 
         }
         if (nextTurn == true)
@@ -259,6 +269,7 @@ public class GameManager : MonoBehaviour
             
             nextTurn = false;
         }
+        
     }
 
     public void NextTurn()
@@ -266,5 +277,10 @@ public class GameManager : MonoBehaviour
 
         nextTurn = true;
     }
-    
+    void asd()
+    {
+        
+    }
 }
+
+

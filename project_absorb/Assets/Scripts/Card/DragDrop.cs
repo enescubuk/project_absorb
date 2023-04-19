@@ -53,6 +53,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler , IBeginDragHandler ,
     {
         if (eventData.pointerDrag != null)
         {
+            animFalse();
             if (isEnd == false)
             {
                 transform.DOMove(firstPleace, 0.2f);

@@ -23,6 +23,7 @@ public class EnemyScript : MonoBehaviour
     public Image stunEffect;
     void Start()
     {
+        
         maxHp = hp;
         gameManager.enemies.Add(gameObject);
 
@@ -93,7 +94,7 @@ public class EnemyScript : MonoBehaviour
         else
         {
             haveStun = false;
-            stunEffect.enabled = false;
+
         }
         yield return new WaitForSeconds(1);
         gameManager.nextTurn = true;
