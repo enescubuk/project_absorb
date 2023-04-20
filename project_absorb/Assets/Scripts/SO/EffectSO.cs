@@ -24,6 +24,7 @@ public class EffectSO : ScriptableObject
         a.effectSO = Instantiate(this);
         }
         target.GetComponent<Effect>().duration += effectDamage;
+        target.GetComponent<Effect>().changeDurationValue(target.GetComponent<Effect>().duration += effectDamage);
     }
     
 

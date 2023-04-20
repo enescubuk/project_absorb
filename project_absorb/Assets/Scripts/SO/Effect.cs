@@ -53,6 +53,11 @@ public class Effect : MonoBehaviour
         }
         
     }
+    public void changeDurationValue(int value)
+    {
+        duration = value;
+        changeValues(duration.ToString(),true);
+    }
 
     public void EffectPlayer()
     {
