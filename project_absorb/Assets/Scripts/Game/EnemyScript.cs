@@ -79,6 +79,7 @@ public class EnemyScript : MonoBehaviour
 
     IEnumerator UseCard()
     {
+        float waitSecondValue;
         if (GetComponent<Effect>() == true)
         {
             GetComponent<Effect>().EffectEnemy();
@@ -90,13 +91,14 @@ public class EnemyScript : MonoBehaviour
             GetComponent<Animator>().SetTrigger("Attack");
             gameManager.playerAnim.SetTrigger("Hit");
             card.GetComponent<Card>().attackPlayer(this);
+            waitSecondValue = 1f;
         }
         else
         {
             haveStun = false;
-
+            waitSecondValue = 0.2f;
         }
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(waitSecondValue);
         gameManager.nextTurn = true;
         gameManager.turnNumber++;
 
