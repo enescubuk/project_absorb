@@ -14,18 +14,29 @@ public class ShopManager : MonoBehaviour
     public CharacterDataSO characterData;
 
     public TMP_Text coinText;
+    
     void Start()
     {
+        //CardDeckScript.CardDeck.Clear();
+        setTheCards();
         randomFourItem();
     }
-    void randomFourItem()
+    void setTheCards()
+    {
+        shopAisle.Clear();
+        foreach (var card in GameObject.FindWithTag("CardDeck").GetComponent<CardDeckScript>().cardsPrefabs)
+        {
+            shopAisle.Add(card);
+        }
+    }
+    void randomFourItem() //random 4 kart seçiyorum
     {
         for (int i = 0; i < 4; i++)
         {
             currentAisle.Add(shopAisle[Random.Range(0,shopAisle.Count)]);
-            shopAisle.Remove(currentAisle[i]);
+            shopAisle.Remove(currentAisle[i]);//seçtiklerim tekrar çıkmasın diye siliyorum
         }
-        reloadList();
+        reloadList();//sildiklerimi tekrar yüklyüorum
     }
 
     void reloadList()
@@ -85,7 +96,7 @@ public class ShopManager : MonoBehaviour
         texts[buttonTextArrayNumber].gameObject.GetComponentInParent<Button>().interactable = false;
         characterData.Money -= int.Parse(texts[buttonTextArrayNumber].GetComponent<TMP_Text>().text);
         setCoinText();
-        CardDeckScript.current.addCard(currentAisle[buttonTextArrayNumber].GetComponent<Card>().cardID);
+        CardDeckScript.current.addCard(currentAisle[buttonTextArrayNumber]);
     }
 
     void createCard()

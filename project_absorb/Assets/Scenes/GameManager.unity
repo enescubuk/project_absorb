@@ -2658,9 +2658,7 @@ MonoBehaviour:
   turnNumber: 0
   nextTurn: 0
   stuned: 0
-  cards:
-  - {fileID: 9066665295950666772, guid: 6145683cdccf15640bde71b5d545b0bc, type: 3}
-  - {fileID: 9066665295950666772, guid: fd49674165ea2d545b9b23f098ee2085, type: 3}
+  cards: []
   cardSlots:
   - {fileID: 4386990922915695863}
   - {fileID: 1847561452481025670}
