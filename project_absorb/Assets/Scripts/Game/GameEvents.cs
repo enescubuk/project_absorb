@@ -17,12 +17,15 @@ public class GameEvents : MonoBehaviour
     public event Action<int> Dead;
     public void DeadEnter(int id, int hp, GameObject enemy)
     {
+        Debug.Log(hp);
         if (hp <= 0)
         {
             
             Dead(id);
             GameManager.current.characterDataSO.Xp += 10;
             GameManager.current.characterDataSO.Money += enemy.GetComponent<EnemyScript>().maxHp;
+            GameManager.current.playerMana += 1;
+            Debug.Log(31);
             //Spawn Enemy
             
             StartCoroutine(SpawnDelay());
