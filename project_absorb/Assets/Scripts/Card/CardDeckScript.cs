@@ -8,6 +8,7 @@ public class CardDeckScript : MonoBehaviour
     public static CardDeckScript current;
 
     public static List<GameObject> CardDeck = new List<GameObject>();
+    public static List<GameObject> ownedCardDeck = new List<GameObject>();
     public List<GameObject> cardsPrefabs;
 
     private void Awake()
@@ -35,6 +36,28 @@ public class CardDeckScript : MonoBehaviour
         CardDeck.Remove(card);
     }
 
+    public bool checkCardDeck(GameObject card)
+    {
+        bool boolValue = false;
+        foreach (GameObject _card in CardDeck)
+        {
+            if (card.name == _card.name)
+            {
+                boolValue = true;
+                break;
+            }
+            else
+            {
+                boolValue = false;
+            }
+
+        }
+        return boolValue;
+    }
+    public void asd()
+    {
+        Debug.Log(CardDeck.Count);
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.D))
