@@ -79,7 +79,7 @@ public class GameManager : MonoBehaviour
 
         playerHp = characterDataSO.Health;
 
-        List<int> selectedCards = CardDeckScript.CardDeck;
+        List<GameObject> selectedCards = CardDeckScript.CardDeck;
         //For Singelton
         if (current != null && current != this)
         {
@@ -93,7 +93,7 @@ public class GameManager : MonoBehaviour
         {
             for (int j = 0; j < selectedCards.Count; j++)
             {
-                if (selectedCards[j] == CardDeckScript.current.cardsPrefabs[i].GetComponent<Card>().cardID)
+                if (selectedCards[j] == CardDeckScript.current.cardsPrefabs[i])
                 {
                     this.cards.Add(CardDeckScript.current.cardsPrefabs[i]);
                     break;
@@ -249,6 +249,16 @@ public class GameManager : MonoBehaviour
             {
                 CardByTurn();
             }
+        Debug.Log("Main Char Turn");
+        
+        for (int i = 0; i < enemies.Count; i++)
+        {
+            Image stunImage = enemies[i].GetComponent<EnemyScript>().stunEffect;
+            if (stunImage.enabled == true)
+            {
+                stunImage.enabled = false;
+            }
+        }
 
         }
         if (nextTurn == true)
@@ -259,6 +269,7 @@ public class GameManager : MonoBehaviour
             
             nextTurn = false;
         }
+        
     }
 
     public void NextTurn()
@@ -266,5 +277,10 @@ public class GameManager : MonoBehaviour
 
         nextTurn = true;
     }
-    
+    void asd()
+    {
+        
+    }
 }
+
+

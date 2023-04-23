@@ -63,7 +63,6 @@ public class Card : MonoBehaviour
             case CardType.Swing: //Swing
                 for (int i = 0; i < GameManager.current.enemies.Count; i++)
                 {
-                    
                     enemyTakeHit(GameManager.current.enemies[i],CammonCardValue);
                 }
                     break;
@@ -88,7 +87,7 @@ public class Card : MonoBehaviour
                     break;
 
             case CardType.Impact: //Impact
-                enemy.GetComponent<Effect>().duration *= 2;
+                enemy.GetComponent<Effect>().changeDurationValue(enemy.GetComponent<Effect>().duration * 2);
                     break;
 
             case CardType.HeavyImpact: //heavy impact
@@ -96,13 +95,14 @@ public class Card : MonoBehaviour
                 {
                     if (GameManager.current.enemies[i].GetComponent<Effect>() != null)
                     {
-                        GameManager.current.enemies[i].GetComponent<Effect>().duration *= 2;
+                        GameManager.current.enemies[i].GetComponent<Effect>().changeDurationValue(GameManager.current.enemies[i].GetComponent<Effect>().duration *= 2);
                     }
                 }
                 break;
 
             case CardType.Bear: //Bear
                 enemyScript.haveStun = true;
+                enemyScript.stunEffect.enabled = true;
                     break;
 
             case CardType.Rose:
@@ -144,6 +144,7 @@ public class Card : MonoBehaviour
                 if (enemy.GetComponent<Effect>() != null)
                 {
                     enemy.GetComponent<Effect>().duration++;
+                    enemy.GetComponent<Effect>().changeDurationValue(enemy.GetComponent<Effect>().duration + 1);
                 }
                 else
                 {

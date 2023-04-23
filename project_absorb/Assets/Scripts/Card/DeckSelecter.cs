@@ -10,11 +10,10 @@ public class DeckSelecter : MonoBehaviour,IPointerClickHandler
     {
         Debug.Log(31);
         cardDeck = GameObject.FindWithTag("CardDeck").GetComponent<CardDeckScript>();
-        foreach (int card_ID in CardDeckScript.CardDeck)
+        foreach (GameObject card in CardDeckScript.CardDeck)
         {
-            if (GetComponent<Card>().cardID == card_ID)
+            if (this.gameObject == card)
             {
-                Debug.Log(transform.gameObject.name);
                 transform.SetParent(GameObject.FindGameObjectWithTag("OwnedCards").transform);
                 break;
             }
@@ -28,12 +27,12 @@ public class DeckSelecter : MonoBehaviour,IPointerClickHandler
     {
         if (transform.parent.name == "All Cards")
         {
-            cardDeck.addCard(this.gameObject.GetComponent<Card>().cardID);
+            cardDeck.addCard(this.gameObject);
             transform.SetParent(GameObject.FindGameObjectWithTag("OwnedCards").transform);
         }
         else
         {
-            cardDeck.removeCard(this.gameObject.GetComponent<Card>().cardID);
+            cardDeck.removeCard(this.gameObject);
             transform.SetParent(GameObject.FindGameObjectWithTag("AllCards").transform);
         }
     }

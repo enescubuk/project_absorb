@@ -7,7 +7,7 @@ public class CardDeckScript : MonoBehaviour
 {
     public static CardDeckScript current;
 
-    public static List<int> CardDeck = new List<int>();
+    public static List<GameObject> CardDeck = new List<GameObject>();
     public List<GameObject> cardsPrefabs;
 
     private void Awake()
@@ -22,29 +22,25 @@ public class CardDeckScript : MonoBehaviour
             current = this;
         }
     }
-
-    public void addCard(int cardID)
+    void Start()
     {
-        Debug.Log(31);
-        CardDeck.Add(cardID);
+        
     }
-    public void removeCard(int cardID)
+    public void addCard(GameObject card)
     {
-        CardDeck.Remove(cardID);
+        CardDeck.Add(card);
+    }
+    public void removeCard(GameObject card)
+    {
+        CardDeck.Remove(card);
     }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            foreach (int card in CardDeck)
-            {
-                Debug.Log(card);
-            }
-        }
-        else if (Input.GetKeyDown(KeyCode.D))
+        if (Input.GetKeyDown(KeyCode.D))
         {
             CardDeck.Clear();
         }
     }
+    
 }
