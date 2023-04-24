@@ -2,38 +2,35 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DeckSelecter : MonoBehaviour,IPointerClickHandler
+public class DeckSelecter : MonoBehaviour
 {
+    public GameObject owned,all;
+
     public CardDeckScript cardDeck;
+    void OnEnable()
+    {
+        owned = GameObject.FindWithTag("OwnedCards");
+        all = GameObject.FindWithTag("AllCards");
+        setParent();
+        
+    }
 
     void setParent()
     {
-        Debug.Log(31);
-        cardDeck = GameObject.FindWithTag("CardDeck").GetComponent<CardDeckScript>();
-        foreach (GameObject card in CardDeckScript.CardDeck)
+        foreach (Transform card in all.transform)
         {
-            if (this.gameObject == card)
-            {
-                transform.SetParent(GameObject.FindGameObjectWithTag("OwnedCards").transform);
-                break;
+            trainerOnEnable(card.gameObject);
+            if (cardDeck.checkCardDeck(card.gameObject) == false)
+            {   
+                Destroy(card.gameObject);
             }
         }
     }
-    void OnEnable()
+    void trainerOnEnable(GameObject card)
     {
-        setParent();
+        Destroy(card.GetComponent<DragDrop>());
+        card.AddComponent<cardAddDeck>();
     }
-    public void OnPointerClick(PointerEventData pointerEventData)
-    {
-        if (transform.parent.name == "All Cards")
-        {
-            cardDeck.addCard(this.gameObject);
-            transform.SetParent(GameObject.FindGameObjectWithTag("OwnedCards").transform);
-        }
-        else
-        {
-            cardDeck.removeCard(this.gameObject);
-            transform.SetParent(GameObject.FindGameObjectWithTag("AllCards").transform);
-        }
-    }
+
+
 }
