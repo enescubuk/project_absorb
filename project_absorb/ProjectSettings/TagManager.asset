@@ -9,6 +9,7 @@ TagManager:
   - OwnedCards
   - BaseSelectManager
   - DeckSelecter
+  - Item
   layers:
   - Default
   - TransparentFX
