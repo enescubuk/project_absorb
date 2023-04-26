@@ -32,7 +32,14 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
 
         if (cardUsed == true)
         {
-            eventData.pointerDrag.gameObject.GetComponent<DragDrop>().isEnd = true;
+            if (eventData.pointerDrag.gameObject.GetComponent<DragDrop>())
+            {
+                eventData.pointerDrag.gameObject.GetComponent<DragDrop>().isEnd = true;
+            }
+            else if (eventData.pointerDrag.gameObject.GetComponent<ItemDragDrop>())
+            {
+                eventData.pointerDrag.gameObject.GetComponent<ItemDragDrop>().isEnd = true;
+            }
 
             gameManager.playerCards.Remove(eventData.pointerDrag.gameObject);
 
@@ -61,11 +68,15 @@ public class CardTarget : MonoBehaviour , IDropHandler, IPointerEnterHandler, IP
         {
             gameManager.playerAnim.SetTrigger("Attack");
 
-            gameManager.EmptySlot(which);
-
-            which.GetComponent<Card>().CastSkill(gameObject);
-
-            
+            if (which.gameObject.tag != "Item")
+            {
+                gameManager.EmptySlot(which);
+                which.GetComponent<Card>().CastSkill(gameObject);
+            }
+            else
+            {
+                which.GetComponent<ItemScript>().CastSkill(gameObject);
+            }
         }
         else
         {

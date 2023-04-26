@@ -32,7 +32,7 @@ public class Inventory : MonoBehaviour
             { // ITEM CAN BE ADDED TO INVENTORY
                 isFull[i] = true;
                 Vector3 slotTransform = new Vector3(slots[i].transform.position.x,slots[i].transform.position.y,slots[i].transform.position.z);
-                item.GetComponent<DragDrop>().firstPleace = slotTransform;
+                item.GetComponent<ItemDragDrop>().firstPleace = slotTransform;
                 item.transform.position = slotTransform;
                 break;
             }

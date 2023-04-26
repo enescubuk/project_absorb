@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ae5076c9c553c94c8b3f1b72702b88f, type: 3}
   m_Name: HealingPotion
   m_EditorClassIdentifier: 
-  target: 0
-  cardName: 
-  cardDiscription: 
+  target: 1
+  cardName: Healing
+  cardDiscription: +10 Hp
   cardMana: 0
   cardID: 0
   cardType: 0
