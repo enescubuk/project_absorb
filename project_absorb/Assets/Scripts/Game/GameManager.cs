@@ -26,6 +26,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] Text killText;
     public List<int> combs;
 
+    [Header("Inventory")]
+
+    public GameObject[] items;
+
+    public GameObject[] currentItems;
+    
     [Header("Turn Things")]
     public int turnNumber;
     public bool nextTurn;

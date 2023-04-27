@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ItemScript : MonoBehaviour
 {
-    public enum CardType { Slash, Piercing};
+    public enum CardType { Bomb, Piercing, Healing};
     [Header("Card Stats")]
     
     
@@ -14,7 +14,7 @@ public class ItemScript : MonoBehaviour
     public int attackPoint;
     public EffectSO effect;
     public int slot;
-    public int CammonCardValue;
+    public int CommonCardValue;
     private GameObject target;
     EnemyScript enemyScript;
     
@@ -42,10 +42,12 @@ public class ItemScript : MonoBehaviour
         enemyScript = enemy.GetComponent<EnemyScript>();
         switch (cardType)   
         {
-            case CardType.Slash:// Slash && Piercing
-            case CardType.Piercing:
-                enemyTakeHit(enemy,CammonCardValue);
+            case CardType.Bomb:// Bomb
+                enemyTakeHit(enemy,CommonCardValue);
                     break;
+            case CardType.Healing: // Healing Potion
+                GameManager.current.playerHp += CommonCardValue;
+                    break;        
         }
 
         GameManager.current.playerMana -= GetComponent<ItemSO>().cardValuesSO.cardMana;

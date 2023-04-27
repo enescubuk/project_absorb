@@ -8,19 +8,22 @@ public class Inventory : MonoBehaviour
 
     public GameObject[] slots;
 
-    public GameObject test;
+    public GameObject panel;
 
     void Start()
     { 
-        
-        PickUp(test);    
+        //PickUp(GameManager.current.items[0]); 
+        for (int i = 0; i < GameManager.current.currentItems.Length; i++)
+        {
+            PickUp(GameManager.current.currentItems[i]);  
+        }
         
     }
     void Update()
     {
         if (Input.GetButtonDown("Jump"))
         {
-            PickUp(test);
+            
             
         }
     }
@@ -32,8 +35,9 @@ public class Inventory : MonoBehaviour
             { // ITEM CAN BE ADDED TO INVENTORY
                 isFull[i] = true;
                 Vector3 slotTransform = new Vector3(slots[i].transform.position.x,slots[i].transform.position.y,slots[i].transform.position.z);
-                item.GetComponent<ItemDragDrop>().firstPleace = slotTransform;
-                item.transform.position = slotTransform;
+                GameObject summonedItem = Instantiate(item,slotTransform,Quaternion.identity,panel.transform);
+                summonedItem.GetComponent<ItemDragDrop>().firstPleace = slotTransform;
+                //summonedItem.transform.position = slotTransform;
                 break;
             }
         }
