@@ -12,6 +12,8 @@ public class ownCards : MonoBehaviour
     public void openPanel()
     {
         panel.SetActive(true);
+        
+        
         for (int i = panel2.transform.childCount - 1; i >= 0; i--)
         {
             GameObject.Destroy(panel2.transform.GetChild(i).gameObject);

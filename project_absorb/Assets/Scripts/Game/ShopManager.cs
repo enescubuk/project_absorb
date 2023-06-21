@@ -33,7 +33,10 @@ public class ShopManager : MonoBehaviour
     {
         for (int i = 0; i < 4; i++)
         {
-            currentAisle.Add(shopAisle[Random.Range(0,shopAisle.Count)]);
+            if (shopAisle[Random.Range(0,shopAisle.Count)].gameObject )
+            {
+                currentAisle.Add(shopAisle[Random.Range(0,shopAisle.Count)]);
+            }
             shopAisle.Remove(currentAisle[i]);//seçtiklerim tekrar çıkmasın diye siliyorum
         }
         reloadList();//sildiklerimi tekrar yüklyüorum

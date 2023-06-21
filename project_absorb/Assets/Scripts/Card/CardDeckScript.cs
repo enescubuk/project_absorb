@@ -58,12 +58,9 @@ public class CardDeckScript : MonoBehaviour
     {
         Debug.Log(CardDeck.Count);
     }
-    void Update()
+    public void restartList()
     {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            CardDeck.Clear();
-        }
+        CardDeck.Clear();
     }
     
 }
