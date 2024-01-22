@@ -13,5 +13,4 @@ public class ItemSO : MonoBehaviour
         cardname_Text.text = cardValuesSO.cardName.ToString();
         carmanaCost_Text.text = cardValuesSO.cardMana.ToString();
     }
-
 }

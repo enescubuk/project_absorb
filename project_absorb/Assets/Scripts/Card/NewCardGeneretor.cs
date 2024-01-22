@@ -35,7 +35,6 @@ public class NewCardGeneretor : MonoBehaviour
 
             for (int i = 0; i < spawnPoints.Length; i++)
             {
-                Debug.Log(a);
                 GameObject b;
                 b = Instantiate(cardList[Random.Range(0,cardList.Count)],spawnPoints[i].position,Quaternion.identity,spawnPoints[i]);
                 Destroy(b.GetComponent<DragDrop>());

@@ -10,11 +10,9 @@ public class RoomScript : MonoBehaviour
     public int eventPeriod;
     public static RoomScript current;
     public int cardPeriod;
-
     bool isCard , isWave;
     private void Awake()
     {
-        //For Singelton
         if (current != null && current != this)
         {
             Destroy(this);
@@ -23,27 +21,20 @@ public class RoomScript : MonoBehaviour
         {
             current = this;
         }
-
-        
     }
-    // Update is called once per frame
     void FixedUpdate()
     {
         if (GameManager.current.wave == cardWave && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave)
         {
             GameManager.current.newCardRoom = true;
-            
-            
         }
         else
         {
             GameManager.current.newCardRoom = false;
         }
-
         if (GameManager.current.wave == eventWave && GameManager.current.bossRoomNumber - 1 != GameManager.current.wave && isCard == true)
         {
             GameManager.current.storyEventTurn = true;
-            
         }
         else
         {
@@ -79,5 +70,4 @@ public class RoomScript : MonoBehaviour
             isCard = false;
         }
     }
-    
 }

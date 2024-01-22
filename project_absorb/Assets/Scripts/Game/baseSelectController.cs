@@ -19,28 +19,21 @@ public class baseSelectController : MonoBehaviour
     Vector3 firstPosSprite,firstPosTexts;
     public Transform close_button;
     private bool isRoomOpen = false;
-
     [SerializeField] TrainerDialog td;
-
     [Header("Rooms")]
     public GameObject CardTrainerRoom;
     public GameObject RecruiterRoom;
     public GameObject GeneralRoom;
     public GameObject Hospital;
-
-
     void Awake()
     {
         lastCameraPos = camera.transform.position;
         lastCameraSize = camera.orthographicSize;
-//        firstPosSprite = roomSprite.gameObject.transform.position;
         firstPosTexts = textParents.transform.position;
     }
-    
     public void enterRoomRange(GameObject room,roomSO roomSO)
     {
         setValues(room,roomSO);
-        
     }
 
     public void newClickRoom(roomSO roomSO)
@@ -105,7 +98,6 @@ public class baseSelectController : MonoBehaviour
     void setValues(GameObject room,roomSO roomSO)
     {
         roomNameText.text = roomSO.roomName;
-       // roomDescriptionText = roomSO.roomDescription;
         roomSprite = roomSO.roomSprite;
     }
     void inMoveBoxs()
@@ -116,8 +108,6 @@ public class baseSelectController : MonoBehaviour
     }
     void goIn()
     {
-       // roomSprite.transform.DOMoveX(firstPosSprite.x + 19.5f ,1f);
-       // roomDescriptionText.transform.DOMoveY(firstPosTexts.y + 8.05f ,1f);
         close_button.DOMoveY(close_button.position.y + 32.5f,1);
     }
     public void outMoveBoxs()
@@ -136,10 +126,6 @@ public class baseSelectController : MonoBehaviour
     void goOut()
     {
         td.Close();
-       // roomSprite.transform.DOMoveX(firstPosSprite.x,1f);
-       // roomDescriptionText.transform.DOMoveY(firstPosTexts.y,1f);
-        
-        
     }
 
     private void resetCamera()

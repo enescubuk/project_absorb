@@ -75,7 +75,6 @@ public class Card : MonoBehaviour
             case CardType.Prepare: //Prepare
                 GameManager.current.Ct = true;
                 goto case CardType.Block;
-                    break;
 
             case CardType.HeavyWound: // Heavy Wound & Reap
             case CardType.Reap:
@@ -85,7 +84,6 @@ public class Card : MonoBehaviour
             case CardType.Stab: //Stab
                 enemyTakeHit(enemy,CammonCardValue);
                 goto case CardType.Wound;
-                    break;
 
             case CardType.Impact: //Impact
                 enemy.GetComponent<Effect>().duration *= 2;

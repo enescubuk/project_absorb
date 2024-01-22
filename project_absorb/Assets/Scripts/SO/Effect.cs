@@ -6,23 +6,14 @@ using UnityEngine.UI;
 
 public class Effect : MonoBehaviour
 {
-    
     public EffectSO effectSO;
-
     public int duration;
-
     private enemyEffectIndicator indicatorScript;
-    
-    void Awake()
-    {
-        
-    }
     void changeValues(string text, bool sprite)
     {
         indicatorScript.bleedEffectCounter.text = text;
         indicatorScript.bleedEffectSprite.enabled = sprite;
     }
-
     private void Start() 
     {
         indicatorScript = GetComponent<enemyEffectIndicator>();
@@ -35,7 +26,6 @@ public class Effect : MonoBehaviour
     }
     public void EffectEnemy()
     {
-        
         if (duration < 1)
         {
             Destroy(this);
@@ -51,7 +41,6 @@ public class Effect : MonoBehaviour
         {
             changeValues(duration.ToString(), true);
         }
-        
     }
 
     public void EffectPlayer()

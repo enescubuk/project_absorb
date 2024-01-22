@@ -7,8 +7,6 @@ public class ownCards : MonoBehaviour
     public GameObject panel;
     public GameObject panel2;
     GameManager gameManager => GameManager.current;
-
-
     public void openPanel()
     {
         panel.SetActive(true);

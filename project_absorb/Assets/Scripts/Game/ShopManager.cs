@@ -7,12 +7,10 @@ using TMPro;
 public class ShopManager : MonoBehaviour
 {
     public List<GameObject> shopAisle; 
-
     public List<GameObject> currentAisle;
     GameObject instantiated;
     public GameObject[] texts;
     public CharacterDataSO characterData;
-
     public TMP_Text coinText;
     void Start()
     {
@@ -40,7 +38,6 @@ public class ShopManager : MonoBehaviour
 
     void checkAisleForSale()
     {
-        //ürünlere paramız yetiyor mu diye checkleyip non-interactive yapıyor
         for (int i = 0; i < texts.Length; i++)
         {
             if (characterData.Money < int.Parse(texts[i].GetComponent<TMP_Text>().text))

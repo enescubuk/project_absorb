@@ -5,15 +5,10 @@ using UnityEngine;
 public class BossFight : MonoBehaviour
 {
     public Transform spawnPoint;
-
     public List<GameObject> bossList;
-
     public List<GameObject> currentBoss;
-
     GameObject currentBosss;
-
     public bool isBossSpawned;
-
     GameObject theBoss;
     void Start()
     {
@@ -25,20 +20,13 @@ public class BossFight : MonoBehaviour
 
     void FixedUpdate()
     {
-
         if (GameManager.current.wave == GameManager.current.bossRoomNumber - 1 && GameManager.current.isBossFight == false && GameManager.current.enemies.Count == 0)
         {
             BossFightCondition();
         }
-
         if (GameManager.current.isBossFight == true && currentBosss == null)
         {
-            Debug.Log(32);
-            //GameManager.current.wave++;
-            GameManager.current.isBossFight = false;
             GameManager.current.enemies.Clear();
-            
-            
         }
         if (isBossSpawned == true)
         {
@@ -47,7 +35,6 @@ public class BossFight : MonoBehaviour
 
         
     }
-    // Update is called once per frame
     void BossFightCondition()
     {
         GameManager.current.CardByTurn();
@@ -60,7 +47,6 @@ public class BossFight : MonoBehaviour
         GameManager.current.NextButton.SetActive(true);
         isBossSpawned = true;
         theBoss = a;
-        
     }
     void delay()
     {

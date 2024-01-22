@@ -23,14 +23,9 @@ public class EnemyScript : MonoBehaviour
     {
         maxHp = hp;
         gameManager.enemies.Add(gameObject);
-
         turnNumber = gameManager.enemies.IndexOf(gameObject);
-
         GameEvents.current.Dead += HpController;
-
         GameEvents.current.Turn += ThisEnemyTurn;
-
-        
     }
 
 
@@ -46,9 +41,7 @@ public class EnemyScript : MonoBehaviour
         if (id == this.id)
         {
             GameEvents.current.Dead -= HpController;
-
             GameEvents.current.Turn -= ThisEnemyTurn;
-
             gameManager.killCount++;
             gameManager.enemies.Remove(this.gameObject);
             Destroy(this.gameObject,0.4f);
@@ -94,6 +87,5 @@ public class EnemyScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         gameManager.nextTurn = true;
         gameManager.turnNumber++;
-
     }
 }
